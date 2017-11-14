@@ -1,0 +1,145 @@
+.footer-menu {
+  height: 347px;
+  margin-top: 109px; // before BS - it was padding-top
+}
+
+.footer-menu__main {
+  position: relative;
+}
+
+.footer-menu__main_logo {
+  position: relative;
+  height: 60px;
+  width: 170px;
+  float: left;
+}
+
+.footer-menu__main_logo:hover {
+  cursor: pointer;
+}
+
+.footer-menu__main_logo-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footer-menu__main_logo-text {
+  position: absolute;
+  top: 11px;
+  left: 69px;
+  color:  $footer-logo;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.footer-menu__main p {
+  margin-top: 71px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.footer-menu .container-w {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.footer-menu__main {
+  width: 40%;
+  margin-right: 53px;
+  color: $footer-main;
+}
+
+.footer-menu__column {
+  width: 20%;
+  display: table;
+  padding-top: 10px;
+}
+
+.footer-menu__column p {
+  color: $add-color;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-menu__list {
+  list-style: none;
+  padding-left: 0;
+  padding-top: 30px;
+  padding-left: 3px;
+}
+
+.footer-menu__item {
+  height: 42px;
+}
+
+.footer-menu__item a {
+  text-decoration: none;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  color: $footer-main;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer-menu__item a:hover {
+  color: $add-color;
+}
+
+.footer-w {
+  height: 79px;
+  background-color:  $background-footer;
+}
+
+.footer-w .container-w {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__text {
+  
+}
+
+.footer__text span {
+  color:  $footer-copy;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer__social {
+  padding-top: 10px;
+//  padding-right: 6px;
+}
+
+.footer__social ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.footer__social li {
+  background-color:  $inverse-color;
+  margin-left: 8px;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  line-height: 32px;
+  color:  $social;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer__social li:hover {
+  background-color:  $add-color;
+  cursor: pointer;
+  @include transition(0.3s, 0s);
+  @include scale-rotate(1.2, 360deg);  
+}

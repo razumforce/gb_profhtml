@@ -1,0 +1,110 @@
+.checkout-steps {
+  padding-top: 60px;
+  color: $main-color;
+  font-weight: 400;
+  padding-left: 3px;
+  padding-bottom: 94px;
+}
+
+.checkout-steps > div {
+  @include border-solid-1-bottom($border-checkout);
+}
+
+.checkout-steps__title {
+  height: 72px;
+  line-height: 72px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.checkout-steps input[type="radio"] {
+  margin-top: 15px;
+}
+
+.checkout-steps input[type="radio"] + span {
+  margin-left: 15px;
+  font-size: 12px;
+}
+
+.checkout-steps input[type="email"],
+.checkout-steps input[type="password"] {
+  margin-top: 7px;
+  margin-bottom: 15px;
+  width: 390px;
+  height: 45px;
+  background-color: inherit;
+  outline: none;
+  @include border-solid-1($border-slider);
+}
+
+.checkout-steps label {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: -1px;
+  padding-top: 2px;
+}
+
+.checkout-steps label + span {
+  color: $checkout-red-p;
+  font-size: 17px;
+}
+
+.checkout-steps button {
+  width: 180px;
+  height: 50px;
+  background-color: inherit;
+  @include border-solid-1($border-slider);
+  font-size: 14px;
+  font-weight: 700;
+  color: $checkout-button;
+  margin-top: 22px;
+  margin-bottom: 78px;
+  outline: none;
+}
+
+.checkout-steps button + span {
+  position: relative;
+  font-weight: 400;
+  margin-left: 27px;
+  top: 5px;
+}
+
+.checkout-steps__01 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.checkout-steps__01 form {
+  width: 515px;
+  margin-left: 35px;
+}
+
+.checkout-steps__01 form h3 {
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.checkout-steps__p-light,
+.checkout-steps__p-light1 {
+  font-size: 13px;
+  color: $checkout-light-p;
+  margin-top: 7px;
+  margin-bottom: 14px;
+}
+
+.checkout-steps__p-light1 {
+  margin-top: -6px;
+  margin-bottom: 14px;
+}
+
+.checkout-steps__p-red {
+  font-size: 13px;
+  color: $checkout-red-p;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+
+
+

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Checkout - Bootstrap</title>
+  <link rel="stylesheet" type="text/css" href="packages/font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container-w">
+       
+        <div class="header__logo"> 
+          <div class="header__logo-pic">
+            <img src="img/brand-logo.png" alt="Logo">
+          </div>
+          <div class="header__logo-text">
+            <span>BRAN<span class="special-text_color">D</span></span>
+          </div>
+        </div>
+        
+        <div class="header__search-bar">
+          <div class="header__search-bar_browse">
+            <a href="#">Browse <i class="fa fa-caret-down"></i></a>
+          </div>
+          <form class="header__search-bar_form" action="#">
+              <input class="header__search-bar_item" type="text" name="search-item"  placeholder="Search for &nbsp;Item..." required pattern="^[a-zA-Z]+$">
+              <button class="header__search-bar_button" type="submit" value=""><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        
+        <div class="header__acc-button">
+          <a href="#">My Account <i class="fa fa-caret-down"></i></a>
+        </div>
+        <div class="header__basket-pic">
+          <span class="badge">2</span>
+          <img src="img/Livecart.png" alt="Your cart">
+        </div>
+      </div>
+    </header>
+
+    <div class="clearfix"></div>
+    
+    <header class="header-menu-line">
+      <div class="container-w">
+        <nav class="header__menu-bar">
+          <ul class="header__menu-list">
+            <li class="header__menu-item"><a href="#">HOME</a></li>
+            <li class="header__menu-item"><a href="#">MAN</a></li>
+            <li class="header__menu-item"><a href="#">WOMEN</a></li>
+            <li class="header__menu-item"><a href="#">KIDS</a></li>
+            <li class="header__menu-item"><a href="#">ACCESSORIES</a></li>
+            <li class="header__menu-item"><a href="#">FEATURED</a></li>
+            <li class="header__menu-item"><a href="#">HOT DEALS</a></li>
+          </ul>
+        </nav> 
+      </div>
+    </header>
+    
+    <header class="header__bc">
+      <div class="container-w">
+        <nav class="header__bc-text">
+          <div class="header__bc_title">
+            <span>NEW ARRIVALS</span>
+          </div>
+          <ol class="breadcrumb header__bc_menu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">MEN</a></li>
+            <li class="active header__bc_active">NEW ARRIVALS</li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="content">
+          
+      <div class="container-w">
+        <section class="checkout-steps">
+          <div>
+            <div class="checkout-steps__title">
+              <span>01. SHIPPING ADDRESS</span>
+            </div>
+            <div class="checkout-steps__01">
+              <form class="checkout-steps__01_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__01_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
+            </div>
+          </div>
+          
+          <div>
+            <div class="checkout-steps__title">
+              <span>02. BILLING INFORMATION</span>
+            </div>
+            <div class="checkout-steps__02">
+              
+            </div>
+          </div>
+          
+          <div>
+            <div class="checkout-steps__title">
+              <span>03. SHIPPING INFORMATION</span>
+            </div>
+            <div class="checkout-steps__03">
+              
+            </div>
+          </div>
+          
+          <div>
+            <div class="checkout-steps__title">
+              <span>04. SHIPPING METHOD</span>
+            </div>
+            <div class="checkout-steps__04">
+              
+            </div>
+          </div>
+          
+          <div>
+            <div class="checkout-steps__title">
+              <span>05. PAYMENT METHOD</span>
+            </div>
+            <div class="checkout-steps__05">
+              
+            </div>
+          </div>
+          
+          <div>
+            <div class="checkout-steps__title">
+              <span>06. ORDER REVIEW</span>
+            </div>
+            <div class="checkout-steps__06">
+              
+            </div>
+          </div>
+          
+        </section>
+
+        <div class="clearfix"></div>
+      </div>
+
+
+      <section class="bottom-ad">
+        <div class="bottom-ad-back">
+        </div>        
+         
+        <div class="container-w">
+          <div class="bottom-ad__opinion">
+            <img class="bottom-ad__opinion_face" src="img/customer-face1.png" alt="customer photo">
+            <p>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium"</p>
+            <span class="bottom-ad__opinion_name">Bin Burhan</span>
+            <span class="bottom-ad__opinion_city">Dhaka, Bd</span>
+            <img class="bottom-ad__opinion_rect1" src="img/Rectangle22_1.png" alt="choose customer opinion">
+            <img class="bottom-ad__opinion_rect2" src="img/Rectangle22_2.png" alt="choose customer opinion">
+            <img class="bottom-ad__opinion_rect3" src="img/Rectangle22_3.png" alt="choose customer opinion">
+          </div>
+          <div class="bottom-ad__subscribe">
+            <div class="bottom-ad__subscribe_cont">
+              <span class="bottom-ad__subscribe_title">SUBSCRIBE</span>
+              <span class="bottom-ad__subscribe_text">FOR OUR NEWLETTER AND PROMOTION</span>
+            </div>
+            <form class="bottom-ad__subscribe_email" action="#">
+              <input class="bottom-ad__subscribe_email-text" type="email" name="subs-email" placeholder="Enter Your Email" required>
+              <button class="bottom-ad__subscribe_email-button" type="submit" value="">Subscribe
+              </button>
+            </form>
+          </div>
+        </div> 
+      </section>
+    </main>
+
+    <footer class="footer-menu">
+      <div class="container-w">
+
+        <div class="footer-menu__main">
+          <div class="footer-menu__main_logo">
+            <div class="footer-menu__main_logo-pic">
+              <img src="img/brand-logo.png" alt="Logo">
+            </div>
+            <div class="footer-menu__main_logo-text">
+              <span>BRAN<span class="special-text_color">D</span></span>
+            </div>
+          </div>
+          <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Instrinsicly syndicate an expanded array of processes and cross-unit partnerships.<br><br>Efficiently plagiarize 24/365 action items and focused infomediaries. Distinctively seize superior initiatives for wireless technoliges. Dynamically optimize.</p>
+        </div>
+
+        <div class="footer-menu__column">
+          <p>COMPANY</p>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item"><a href="#">Home</a></li>
+            <li class="footer-menu__item"><a href="#">Shop</a></li>
+            <li class="footer-menu__item"><a href="#">About</a></li>
+            <li class="footer-menu__item"><a href="#">How It Works</a></li>
+            <li class="footer-menu__item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu__column">
+          <p>INFORMATION</p>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item"><a href="#">Terms &amp; Condition</a></li>
+            <li class="footer-menu__item"><a href="#">Privacy Policy</a></li>
+            <li class="footer-menu__item"><a href="#">How to Buy</a></li>
+            <li class="footer-menu__item"><a href="#">How to Sell</a></li>
+            <li class="footer-menu__item"><a href="#">Promotion</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu__column">
+          <p>SHOP CATEGORY</p>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item"><a href="#">Men</a></li>
+            <li class="footer-menu__item"><a href="#">Women</a></li>
+            <li class="footer-menu__item"><a href="#">Child</a></li>
+            <li class="footer-menu__item"><a href="#">Apparel</a></li>
+            <li class="footer-menu__item"><a href="#">Browse All</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="footer-w">
+      <div class="container-w">
+        <div class="footer__text">
+          <span>&copy; 2017 Brand All Rights Reserved.</span>
+        </div>
+        <div class="footer__social">
+          <ul>
+            <li><i class="fa fa-facebook"></i></li>
+            <li><i class="fa fa-twitter"></i></li>
+            <li><i class="fa fa-linkedin"></i></li>
+            <li><i class="fa fa-pinterest"></i></li>
+            <li><i class="fa fa-google-plus"></i></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

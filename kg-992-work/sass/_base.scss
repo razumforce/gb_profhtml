@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,700i,900');
+
+@mixin background-gradient {
+  background: -webkit-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -moz-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -o-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: -ms-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+  background: linear-gradient(180deg, #f9f9f9 0%, #f5f5f5 100%);
+}
+
+@mixin default-font {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@mixin border-solid-rad-left($rad, $color, $width) {
+  border-bottom-left-radius: $rad;
+  border-top-left-radius: $rad;
+  border-style: solid;
+  border-width: $width;
+  border-color:  $color;
+}
+
+@mixin border-solid-rad-right($rad, $color, $width) {
+  border-bottom-right-radius: $rad;
+  border-top-right-radius: $rad;
+  border-style: solid;
+  border-width: $width;
+  border-color:  $color;
+}
+
+@mixin border-solid-1($color) {
+  border-style: solid;
+  border-width: 1px;
+  border-color:  $color;
+}
+
+@mixin border-solid-1-bottom($color) {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color:  $color;
+}
+
+@mixin scale($n) {
+  -moz-transform: scale($n);
+  -webkit-transform: scale($n);
+  -o-transform: scale($n);
+  -ms-transform: scale($n);
+  transform: scale($n);
+}
+
+@mixin rotate($n) {
+  -moz-transform: rotate($n);
+  -webkit-transform: rotate($n);
+  -o-transform: rotate($n);
+  -ms-transform: rotate($n);
+  transform: rotate($n);
+}
+
+@mixin scale-rotate($scale, $rotate) {
+  -moz-transform: scale($scale) rotate($rotate);
+  -webkit-transform: scale($scale) rotate($rotate);
+  -o-transform: scale($scale) rotate($rotate);
+  -ms-transform: scale($scale) rotate($rotate);
+  transform: scale($scale) rotate($rotate);
+}
+
+@mixin transition($t, $d) {
+  -webkit-transition: all $t $d;
+  -moz-transition: all $t $d;
+  -o-transition: all $t $d;
+  transition: all $t $d;
+}
+
+$container-width: 1141px;
+
+$main-color: #222222;
+$add-color: #f16d7f;
+$inverse-color: #ffffff;
+
+$background-search-browse: #f5f5f5;
+$background-email: #e1e1e1;
+$background-footer: #e6e6e6;
+$background-slider-arrow: rgba(42, 42, 42, 0.15);
+$background-bc: #f8f3f4;
+$background-slider: #f7f7f7;
+$background-maylike: #e9e9e9;
+
+$border-search: #e6e6e6;
+$border-header: #ececec;
+$border-slider: #eaeaea;
+$border-shadow: rgba(0, 0, 0, 0.16);
+$border-checkout: #e8e8e8;
+
+$search-text: #a4a4a4;
+$special-cat: #fbfbfb;
+$bottom-ad: rgba(34, 34, 36, 0.67);
+$footer-main: #898989;
+$footer-logo: #3d3d40;
+$footer-copy: #7a7a7a;
+$social: #b2b2b2;
+$maylike-title: #4d4d4d;
+$single-span1: #b9b9b9;
+$single-span2: #2f2f2f;
+$single-price: #ef5b70;
+$single-type-box: #bcbcbc;
+$checkout-light-p: #b3b2b2;
+$checkout-red-p: #ff0d0d;
+$checkout-button: #4a4a4a;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p, span {
+  margin: 0;
+}
+
+.wrapper {
+  @include background-gradient;
+  @include default-font;
+  min-width: $container-width;
+  scroll-behavior: auto;
+}
+
+.container-w {
+  margin: 0 auto;
+  /*width: 80%;*/
+  max-width: $container-width;
+  position: relative;
+  scroll-behavior: auto;
+}
+
+.clearfix-w {
+  clear: both;
+}
