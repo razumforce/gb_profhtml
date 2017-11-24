@@ -1158,7 +1158,7 @@ p, span {
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.16);
   cursor: pointer; }
 
-.product-items__item:nth-child(4n) {
+.product-items__item:nth-child(3n) {
   margin-right: 0; }
 
 .product-items__item > img {
