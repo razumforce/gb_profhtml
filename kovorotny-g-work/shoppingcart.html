@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="packages/font-awesome-4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/brandshop.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -38,8 +39,10 @@
           <a href="#">My Account <i class="fa fa-caret-down"></i></a>
         </div>
         <div class="header__basket-pic">
-          <span class="badge">2</span>
-          <img src="img/Livecart.png" alt="Your cart">
+          <a href="shoppingcart.html">
+            <span id="cart_qty" class="badge"></span>
+            <img src="img/Livecart.png" alt="Your cart">
+          </a>
         </div>
       </div>
     </header>
@@ -81,7 +84,7 @@
           
       <div class="container-w">
         <section class="shopcart">
-          <div class="div shopcart-main">
+          <div id="shopcart-main" class="div shopcart-main">
             <div class="shopcart-main_head">
               <span>PRODUCT DETAILS</span>
               <span>UNITE PRICE</span>
@@ -90,12 +93,22 @@
               <span>SUBTOTAL</span>
               <span>ACTION</span>
             </div>
+            <div id="shopcart-content"></div>
+<!--
             <div class="shopcart-main__item">
               <div class="shopcart-main__main_det">
                 <img src="img/shoppingcart/cartimg1.png" alt="img1">
-                <span>MANGO PEOPLE T-SHIRT</span>
-                <span>Color:</span><span>Red</span>
-                <span>Size:</span><span>XLL</span>
+                <div class="shopcart-main__main_desc">
+                  <div>
+                    <span>MANGO PEOPLE T-SHIRT</span>
+                  </div>
+                  <div>
+                    <span>Color:</span><span>Red</span>
+                  </div>
+                  <div>
+                    <span>Size:</span><span>XLL</span>
+                  </div>
+                </div>
               </div>
               <div class="shopcart-main__main_price">
                 <span>$150</span>
@@ -110,85 +123,43 @@
                 <span>$300</span>
               </div>
               <div class="shopcart-main__main_action">
-                <span>X</span>
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="shopcart-main__item">
-              <div class="shopcart-main__main_det">
-                <img src="img/shoppingcart/cartimg1.png" alt="img1">
-                <span>MANGO PEOPLE T-SHIRT</span>
-                <span>Color:</span><span>Red</span>
-                <span>Size:</span><span>XLL</span>
-              </div>
-              <div class="shopcart-main__main_price">
-                <span>$150</span>
-              </div>
-              <div class="shopcart-main__main_qty">
-                <span>2</span>
-              </div>
-              <div class="shopcart-main__main_ship">
-                <span>FREE</span>
-              </div>
-              <div class="shopcart-main__main_subtotal">
-                <span>$300</span>
-              </div>
-              <div class="shopcart-main__main_action">
-                <span>X</span>
-              </div>
-            </div>
-            <div class="shopcart-main__item">
-              <div class="shopcart-main__main_det">
-                <img src="img/shoppingcart/cartimg1.png" alt="img1">
-                <span>MANGO PEOPLE T-SHIRT</span>
-                <span>Color:</span><span>Red</span>
-                <span>Size:</span><span>XLL</span>
-              </div>
-              <div class="shopcart-main__main_price">
-                <span>$150</span>
-              </div>
-              <div class="shopcart-main__main_qty">
-                <span>2</span>
-              </div>
-              <div class="shopcart-main__main_ship">
-                <span>FREE</span>
-              </div>
-              <div class="shopcart-main__main_subtotal">
-                <span>$300</span>
-              </div>
-              <div class="shopcart-main__main_action">
-                <span>X</span>
-              </div>
-            </div>
+-->
             <div class="shopcart-main__buttons">
-              <div class="shopcart-main__buttons_clear">
-                <a href="#">CLEAR SHOPPING CART</a>
+              <div class="shopcart-main__buttons_big">
+                <a id="shopcart-clear-button" href="#">CLEAR SHOPPING CART</a>
               </div>
-              <div class="shopcart-main__buttons_clear">
-                <a href="#">CONTINUE SHOPPING</a>
+              <div class="shopcart-main__buttons_big">
+                <a id="shopcart-continue-button" href="#">CONTINUE SHOPPING</a>
               </div>
             </div>
           </div>
           <div class="shopcart-info">
-            <form class="shopcart-info__address">
-              <div class="shopcart-info__address_header">
+            <div class="shopcart-info__address">
+              <div class="shopcart-info__header">
                 <span>SHIPPING ADDRESS</span>
               </div>
               <div class="shopcart-info__address_items">
-                <span>Bangladesh</span>
-                <span>State</span>
-                <span>Postcode - Zip</span>
-                <span>GET A QUOTE</span>
+                <input type="text" placeholder="Country">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Postcode - Zip">
+                <span style="display: none">Coupon</span>
+                <div class="shopcart-main__buttons_small">
+                  <a href="#">GET A QUOTE</a>
+                </div>
               </div>
-            </form>
+            </div>
             <div class="shopcart-inf__coupon">
-              <div class="shopcart-info__coupon_header">
+              <div class="shopcart-info__header">
                 <span>COUPON DISCOUNT</span>
               </div>
               <div class="shopcart-info__coupon_desc">
                 <span>Enter your coupon code if you have one</span>
               </div>
-              <span>State</span>
-              <div class="shopcart-info__coupon_button">
+                <input type="text" placeholder="Coupon">
+              <div class="shopcart-main__buttons_small">
                 <a href="#">APPLY COUPON</a>
               </div>
             </div>
@@ -196,14 +167,14 @@
               <div class="shopcart-info__total_text">
                 <div class="shopcart-info__total_text-sub">
                   <span>SUB TOTAL</span>
-                  <span>$900</span>
+                  <span id="shopcart-subtotal">$900</span>
                 </div>
                 <div class="shopcart-info__total_text-total">
                   <span>GRAND TOTAL</span>
-                  <span>$900</span>
+                  <span id="shopcart-grandtotal" class="special-text_color">$900</span>
                 </div>
               </div>
-              <div class="shopcart-info__total_button">
+              <div class="shopcart-main__buttons_checkout">
                 <a href="#">PROCEED TO CHECKOUT</a>
               </div>
             </div>
