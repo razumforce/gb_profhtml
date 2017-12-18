@@ -35,14 +35,29 @@
           </form>
         </div>
         
-        <div class="header__acc-button">
-          <a href="#">My Account <i class="fa fa-caret-down"></i></a>
-        </div>
-        <div class="header__basket-pic">
-          <a href="shoppingcart.html">
-            <span id="cart_qty" class="badge"></span>
-            <img src="img/Livecart.png" alt="Your cart">
-          </a>
+        <div class="header__acc-controls">
+          <div class="header__basket-pic">
+            <a href="#">
+              <span id="cart_qty" class="badge"></span>
+              <img src="img/Livecart.png" alt="Your cart">
+            </a>
+          </div>
+          <div class="header__acc-button">
+            <a href="">My Account <i class="fa fa-caret-down"></i></a>
+          </div>
+          <div id="header-cart" class="header_cart" style="display: none">
+            <div id="header-cart-content" class="header_cart__content">
+            </div>
+            <div class="header_cart__total">
+              <span>TOTAL</span><span id="headercart-total">$0</span>
+            </div>
+            <div class="header_cart__checkout">
+              <button id="headcart-checkout">CHECKOUT</button>
+            </div>
+            <div class="header_cart__gotocart">
+              <button id="headcart-gotocart">GO TO CART</button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
