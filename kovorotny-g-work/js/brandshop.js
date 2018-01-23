@@ -3,7 +3,16 @@
 
 window.onload = init;
 
+var slides = {
+  link: ['./img/top-slider1.png',
+         './img/top-slider1.png']
+};
+
+var slideCount = 0;
+
 function init() {
+  var sliderInt = setInterval(slideHeader, 5000);
+
   var basket = JSON.parse(localStorage.getItem('brandshop'));
   showBasketCount(basket);
 
@@ -38,6 +47,21 @@ function init() {
     showShopcart(basket);
     shopcartArea[0].addEventListener('click', handleShopcartArea);
   }
+}
+
+// function slideEffect() {
+//   $(".main-slider").effect('slide', {}, 2000, slideHeader);
+// }
+
+function slideHeader() {
+  if (slideCount < slides.link.length - 1) {
+    slideCount++;
+  } else {
+    slideCount = 0;
+  }
+  $(".main-slider").css('background-image', 'url(' + slides.link[slideCount] + ')');
+  console.log(slideCount, slides.link[slideCount]);
+  $(".main-slider").effect('slide', 1500)
 }
 
 function addFeaturedToBasket(event) {
