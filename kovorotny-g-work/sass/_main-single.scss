@@ -1,11 +1,19 @@
 .single-slider {
   height: 777px;
-  background-image: url("../img/single/product-big-photo.png");
+//  background-image: url("../img/single/product-big-photo.png");
   position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
+//  background-position: center;
+//  background-repeat: no-repeat;
   background-color: $background-slider;
   @include border-solid-1($border-slider);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.single-slider-ind {
+  position: relative;
+  top: 650px;
 }
 
 .single-slider__arrow-box {

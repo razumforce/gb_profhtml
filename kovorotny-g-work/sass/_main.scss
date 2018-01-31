@@ -3,8 +3,8 @@
 }
 
 .main-slider {
-  height: 614px;
-  background-color: $border-checkout;
+  height: 539px;
+//  background-color: $border-checkout;
   position: relative;
 }
 
@@ -14,17 +14,25 @@
   left: 0;
 }
 
+.slider-ind > li {
+  background-color: $inverse-color;
+}
+
+.slider-ind > li.active {
+  background-color: $add-color;
+}
+
 .main-slider__rect {
   position: absolute;
   top: 225px;
-  left: 1px;
+  left: 1px+231px;
   z-index: 1;
 }
 
 .main-slider__words_big {
   position: absolute;
   top: 204px;
-  left: 26px;
+  left: 26px+231px;
   color: $main-color;
   font-size: 60px;
   font-weight: 900;
@@ -35,7 +43,7 @@
 .main-slider__words_small {
   position: absolute;
   top: 285px;
-  left: 26px;
+  left: 26px+231px;
   color: $main-color;
   font-size: 37px;
   font-weight: 900;
