@@ -147,6 +147,15 @@ p, span {
   scroll-behavior: auto;
 }
 
+.container-w-slider {
+  margin: 0 auto;
+  /*width: 80%;*/
+  max-width: $container-width;
+  position: relative;
+  scroll-behavior: auto;
+  top: 0;
+}
+
 .clearfix {
   clear: both;
 }
