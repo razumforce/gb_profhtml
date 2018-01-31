@@ -11,6 +11,21 @@ var slides = {
 var slideCount = 0;
 
 function init() {
+
+    $( "#product-price-slider" ).slider({
+      range: true,
+      min: 52,
+      max: 450,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#product-price1" ).val( "$" + ui.values[0]);
+        $( "#product-price2" ).val( "$" + ui.values[1]);
+      }
+    });
+    $( "#product-price1" ).val( "$" + $( "#product-price-slider" ).slider( "values", 0 ));
+    $( "#product-price2" ).val( "$" + $( "#product-price-slider" ).slider( "values", 1 ));
+
+
   var sliderInt = setInterval(slideHeader, 5000);
 
   var basket = JSON.parse(localStorage.getItem('brandshop'));

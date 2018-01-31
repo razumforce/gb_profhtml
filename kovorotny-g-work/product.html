@@ -7,7 +7,11 @@
   <title>Home - Checkout - Bootstrap</title>
   <link rel="stylesheet" type="text/css" href="packages/font-awesome-4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="packages/jui/jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="packages/jui/jquery-ui.min.js"></script>
   <script src="js/brandshop.js"></script>
 </head>
 <body>
@@ -100,7 +104,7 @@
       <div class="container-w">
         <div class="product-main-wrapper">
           <nav class="product__left-nav">
-            <div class="product__left-nav__head">
+            <div class="product__left-nav__head product__left-nav__active">
               <span>CATEGORY</span>
               <div class="product__left-nav__items">
                 <ul>
@@ -144,44 +148,75 @@
 
           <section class="product-choice">
             <div class="product-choice__options">
-              <div class="product-choice__options_head">
-                <span>TRENDING NOW</span>
+              <div class="product-choice__options_trending">
+                <div>TRENDING NOW</div>
+                <div class="product-choice__options_items">
+                  <span>Bohemian</span>
+                  <span>|</span>
+                  <span>Floral</span>
+                  <span>|</span>
+                  <span>Lace</span>
+                  <span>Floral</span>
+                  <span>|</span>
+                  <span>Lace</span>
+                  <span>|</span>
+                  <span>Bohemian</span>
+                </div>
               </div>
-              <div class="product-choice__options_items">
-                <span>Bohemian</span>
-                <span>Floral</span>
-                <span>Lace</span>
-                <span>Floral</span>
-                <span>Lace</span>
-                <span>Bohemian</span>
+              <div class="product-choice__options_size">
+                <div>SIZE</div>
+                <div class="product-choice__options_items">
+                  <div>
+                    <input type="checkbox" name="size" value="XXS">
+                    <span>XXS</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="XS">
+                    <span>XS</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="S">
+                    <span>S</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="M">
+                    <span>M</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="L">
+                    <span>L</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="XL">
+                    <span>XL</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="size" value="XXL">
+                    <span>XXL</span>
+                  </div>
+                </div>
               </div>
-              <div class="product-choice__options_head">
-                <span>SIZE</span>
-              </div>
-              <div class="product-choice__options_items">
-                <span>XXS</span>
-                <span>XS</span>
-                <span>S</span>
-                <span>M</span>
-                <span>L</span>
-                <span>XL</span>
-                <span>XXL</span>
-              </div>
-              <div class="product-choice__options_head">
-                <span>PRICE</span>
-              </div>
-              <div class="product-choice__options_items">
-                <span>52-400</span>
+              <div class="product-choice__options_price">
+                <div>PRICE</div>
+                
+                <div id="product-price-slider"></div>
+                <div>
+                  <input type="text" id="product-price1" readonly>
+                  <input type="text" id="product-price2" readonly>
+                </div>
+                
               </div>
             </div>
             <div class="product-choice__sort">
               <div class="product-choice__sort_item">
                 <span>Sort By</span>
                 <span>Name</span>
+                <span>x</span>
               </div>
               <div class="product-choice__sort_item">
                 <span>Show</span>
                 <span>09</span>
+                <span>x</span>
               </div>
             </div>
             <div class="product-items">
@@ -261,7 +296,16 @@
             <div class="clearfix"></div>
             <div class="product-choice__controls">
               <div class="product-choice__controls_pages">
-                <span>1 2 3 4 5 6 ... 20</span>
+                <span>&lt;</span>
+                <span class="product-choice__pag-active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>.....</span>
+                <span>20</span>
+                <span class="product-choice__pag-active">&gt;</span>
               </div>
               <div class="product-choice__controls_button">
                 <a href="#">View All</a>
@@ -269,26 +313,36 @@
             </div>
           </section>
         </div>
-        <section class="special-product">
-            <div class="special-product__item">
-              <img src="img/icon-del-truck.png" alt="free delivery">
-              <span>Free Delivery</span>
-              <p>Worldwide delivery on all.Authorit tively morph next-generation innov tion with extensive models.</p>
-            </div>
-             <div class="special-product__item">
-              <img src="img/icon-discount.png" alt="sales & discounts">
-              <span>Sales &amp; Discounts</span>
-              <p>Worldwide delivery on all.Authorit tively morph next-generation innov tion with extensive models.</p>
-            </div>
-             <div class="special-product__item">
-              <img src="img/icon-assurance.png" alt="quality assurance">
-              <span>Quality assurance</span>
-              <p>Worldwide delivery on all.Authorit tively morph next-generation innov tion with extensive models.</p>
-            </div>
-          </section>
 
         <div class="clearfix"></div>
       </div>
+      <section class="special-product">
+        <div class="container-w">
+          <div class="special-product-wrapper">
+            <div class="special-product__item">
+              <div>
+                <img src="img/icon-del-truck.png" alt="free delivery">
+              </div>
+              <span>Free Delivery</span>
+              <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+             <div class="special-product__item">
+              <div>
+                <img src="img/icon-discount.png" alt="sales & discounts">
+              </div>
+              <span>Sales &amp; Discounts</span>
+              <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+             <div class="special-product__item">
+              <div>
+                <img src="img/icon-assurance.png" alt="quality assurance">
+              </div>
+              <span>Quality assurance</span>
+              <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="bottom-ad">
         <div class="bottom-ad-back">
@@ -385,7 +439,5 @@
     </footer>
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
