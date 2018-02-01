@@ -207,10 +207,10 @@
 
 .product-choice__controls_pages > span:hover {
   cursor: pointer;
-  color: $single-price;
 }
 
-span.product-choice__pag-active {
+span.product-choice__pag-active,
+span.product-choice__control-active {
   color: $single-price;
 }
 

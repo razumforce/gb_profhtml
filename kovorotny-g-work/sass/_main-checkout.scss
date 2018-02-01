@@ -69,18 +69,22 @@
   top: 5px;
 }
 
-.checkout-steps__01 {
-  display: flex;
+.checkout-steps__div {
+  display: none;
   flex-direction: row;
   justify-content: flex-start;
 }
 
-.checkout-steps__01 form {
+div.checkout-steps__active {
+  display: flex;
+}
+
+.checkout-steps__div form {
   width: 515px;
   margin-left: 35px;
 }
 
-.checkout-steps__01 form h3 {
+.checkout-steps__div form h3 {
   font-size: 13px;
   margin-top: 7px;
 }

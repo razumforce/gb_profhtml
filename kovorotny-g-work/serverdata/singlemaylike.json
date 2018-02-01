@@ -1,0 +1,33 @@
+{
+  "result": true,
+  "message": "OK",
+  "items": [
+    {
+      "id": 10,
+      "name": "BLAZE LEGGINGS",
+      "price": "$52.00",
+      "pic": "./img/single/maylike1.png"
+    },
+
+    {
+      "id": 11,
+      "name": "ALEXA SWEATER",
+      "price": "E35.00",
+      "pic": "./img/single/maylike2.png"
+    },
+
+    {
+      "id": 12,
+      "name": "AGNES TOP",
+      "price": "$152.00",
+      "pic": "./img/single/maylike3.png"
+    },
+
+    {
+      "id": 13,
+      "name": "SYLVA SWEATER",
+      "price": "3052.52руб",
+      "pic": "./img/single/maylike4.png"
+    }
+  ]
+}

@@ -10,7 +10,9 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="js/brandshop.js"></script>
+  <script src="packages/jui/jquery-ui.min.js"></script>
+  <script src="js/brand_global_basket.js" defer></script>
+  <script src="js/brandshop.js" defer></script>
 </head>
 <body>
   <div class="wrapper">
@@ -18,13 +20,15 @@
     <header class="header">
       <div class="container-w">
        
-        <div class="header__logo"> 
-          <div class="header__logo-pic">
-            <img src="img/brand-logo.png" alt="Logo">
-          </div>
-          <div class="header__logo-text">
-            <span>BRAN<span class="special-text_color">D</span></span>
-          </div>
+        <div class="header__logo">
+          <a href="./index.html">
+            <div class="header__logo-pic">
+              <img src="img/brand-logo.png" alt="Logo">
+            </div>
+            <div class="header__logo-text">
+              <span>BRAN<span class="special-text_color">D</span></span>
+            </div>
+          </a>
         </div>
         
         <div class="header__search-bar">
@@ -101,7 +105,7 @@
           
       <div class="container-w">
         <section class="shopcart">
-          <div id="shopcart-main" class="div shopcart-main">
+          <div id="shopcart-main" class="shopcart-main">
             <div class="shopcart-main_head">
               <span>PRODUCT DETAILS</span>
               <span>UNITE PRICE</span>

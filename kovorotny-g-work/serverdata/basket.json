@@ -1,0 +1,32 @@
+{
+  "result": true,
+  "message": "OK",
+  "subtotal": "$156.00",
+  "total": "$156.00",
+  "quantity": 3,
+  "basket": [
+    {
+      "id_product": 10,
+      "name": "BLAZE LEGGINGS",
+      "color": "Red",
+      "size": "XXL",
+      "price": "$52.00",
+      "quantity": 2,
+      "shipping": "FREE",
+      "amount": "$104.00",
+      "pic": "./img/single/maylike1.png"
+    },
+
+    {
+      "id_product": 105,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "color": "Black",
+      "size": "S",
+      "price": "$52.00",
+      "quantity": 1,
+      "shipping": "FREE",
+      "amount": "$104.00",
+      "pic": "./img/product/image1.png"
+    }
+  ]
+}

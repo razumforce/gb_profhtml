@@ -10,7 +10,9 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="js/brandshop.js"></script>
+  <script src="packages/jui/jquery-ui.min.js"></script>
+  <script src="js/brand_global_basket.js" defer></script>
+  <script src="js/brandshop.js" defer></script>
 </head>
 <body>
   <div class="wrapper">
@@ -18,13 +20,15 @@
     <header class="header">
       <div class="container-w">
        
-        <div class="header__logo"> 
-          <div class="header__logo-pic">
-            <img src="img/brand-logo.png" alt="Logo">
-          </div>
-          <div class="header__logo-text">
-            <span>BRAN<span class="special-text_color">D</span></span>
-          </div>
+        <div class="header__logo">
+          <a href="./index.html">
+            <div class="header__logo-pic">
+              <img src="img/brand-logo.png" alt="Logo">
+            </div>
+            <div class="header__logo-text">
+              <span>BRAN<span class="special-text_color">D</span></span>
+            </div>
+          </a>
         </div>
         
         <div class="header__search-bar">
@@ -130,8 +134,8 @@
             <div class="checkout-steps__title">
               <span>01. SHIPPING ADDRESS</span>
             </div>
-            <div class="checkout-steps__01">
-              <form class="checkout-steps__01_form-gr" action="">
+            <div class="checkout-steps__div">
+              <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
                 <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
@@ -143,7 +147,7 @@
                 <button type="submit" value="">CONTINUE
                 </button>
               </form>
-              <form class="checkout-steps__01_form-alr" action="">
+              <form class="checkout-steps__div_form-alr" action="">
                 <h3>ALREADY REGISTERED?</h3>
                 <p class="checkout-steps__p-light">Please log in below</p>
                 <label for="email">EMAIL ADDRESS</label><span>*</span><br>
@@ -162,8 +166,31 @@
             <div class="checkout-steps__title">
               <span>02. BILLING INFORMATION</span>
             </div>
-            <div class="checkout-steps__02">
-              
+            <div class="checkout-steps__div">
+              <form class="checkout-steps__div_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__div_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
             </div>
           </div>
           
@@ -171,8 +198,31 @@
             <div class="checkout-steps__title">
               <span>03. SHIPPING INFORMATION</span>
             </div>
-            <div class="checkout-steps__03">
-              
+            <div class="checkout-steps__div">
+              <form class="checkout-steps__div_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__div_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
             </div>
           </div>
           
@@ -180,8 +230,31 @@
             <div class="checkout-steps__title">
               <span>04. SHIPPING METHOD</span>
             </div>
-            <div class="checkout-steps__04">
-              
+            <div class="checkout-steps__div">
+              <form class="checkout-steps__div_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__div_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
             </div>
           </div>
           
@@ -189,8 +262,31 @@
             <div class="checkout-steps__title">
               <span>05. PAYMENT METHOD</span>
             </div>
-            <div class="checkout-steps__05">
-              
+            <div class="checkout-steps__div">
+              <form class="checkout-steps__div_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__div_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
             </div>
           </div>
           
@@ -198,8 +294,31 @@
             <div class="checkout-steps__title">
               <span>06. ORDER REVIEW</span>
             </div>
-            <div class="checkout-steps__06">
-              
+            <div class="checkout-steps__div checkout-steps__active">
+              <form class="checkout-steps__div_form-gr" action="">
+                <h3>CHECK AS A GUEST OR REGISTER</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p>
+                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <h3>REGISTER AND SAVE TIME!</h3>
+                <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
+                <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Easy access to your order history and status</p>
+                <button type="submit" value="">CONTINUE
+                </button>
+              </form>
+              <form class="checkout-steps__div_form-alr" action="">
+                <h3>ALREADY REGISTERED?</h3>
+                <p class="checkout-steps__p-light">Please log in below</p>
+                <label for="email">EMAIL ADDRESS</label><span>*</span><br>
+                <input type="email" required><br>
+                <label for="password">PASSWORD</label><span>*</span><br>
+                <input type="password" required><br>
+                <p class="checkout-steps__p-red">*Required Fields</p>
+                <button type="submit" value="">LOG IN&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+                <span>Forgot Password?</span>
+              </form>
             </div>
           </div>
           
