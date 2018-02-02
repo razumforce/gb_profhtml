@@ -9,15 +9,18 @@
 
 function Basket($rootMain, $rootHeader) {
 
+    this.$rootMain = $rootMain;
+    this.$rootHeader = $rootHeader;
     this.subtotal = '$0.00';
     this.total = '$0.00';
     this.quantity = 0;
 
     this.basketItems = [];
-    this.collectBasketItems($rootMain, $rootHeader); // Загружаем товары, которые уже есть на сервере (json файл)
+    this.collectBasketItems(); // Загружаем товары, которые уже есть на сервере (json файл)
 }
 
-Basket.prototype.collectBasketItems = function ($rootMain, $rootHeader) {
+
+Basket.prototype.collectBasketItems = function () {
   $.get({
       url: './serverdata/basket.json',
       dataType: 'json',
@@ -27,47 +30,36 @@ Basket.prototype.collectBasketItems = function ($rootMain, $rootHeader) {
           this.total = data.total;
           this.quantity = data.quantity;
 
+          this.basketItems = [];
           for (var index in data.basket) {
               this.basketItems.push(data.basket[index]);
           }
           console.log(this.basketItems);
-          this.render($rootMain, $rootHeader);
-          this.refresh($rootMain, $rootHeader);
+          this.render(this.$rootMain, this.$rootHeader);
+          this.refresh(this.$rootMain, this.$rootHeader);
       },
       context: this
   });
 };
 
-Basket.prototype.render = function ($rootMain, $rootHeader) { // Генерация базовой разметки
-    if ($rootMain.length !== 0) {
+
+Basket.prototype.render = function () { // Генерация базовой разметки
+    if (this.$rootMain.length !== 0) {
       console.log('MAIN SHOP CART PRESENT!');
-      // showShopcart(basket);
-      $rootMain.on('click', handleShopcartArea);
     }
 
-    if ($rootHeader.length !== 0) {
+    if (this.$rootHeader.length !== 0) {
       console.log('HEADER cart present!');
-      // showHeaderCart(basket);
       $('.header__basket-pic').first().on('mouseenter', basketPicEnterHandler);
       $('.header__basket-pic').first().on('mouseleave', basketPicLeaveHandler);
-      $rootHeader.on('click', handleHeadcartArea);
-      $rootHeader.on('mouseenter', basketPicEnterHandler);
-      $rootHeader.on('mouseleave', basketPicLeaveHandler);
+      this.$rootHeader.on('mouseenter', basketPicEnterHandler);
+      this.$rootHeader.on('mouseleave', basketPicLeaveHandler);
     }
-
-    // deleteItem = this.delete.bind(this);
-
-    // $('#basket_items').on('click', 'span', function() {
-    //   regexp = /^bskitemdel/;
-    //   if (regexp.test($(this).attr('id'))) {
-    //     var item = $(this).attr('id').split('-')[1];
-    //     deleteItem(item);
-    //   }
-    // });
 };
 
-Basket.prototype.refresh = function ($rootMain, $rootHeader) {
-  if ($rootHeader.length !== 0) {
+
+Basket.prototype.refresh = function () {
+  if (this.$rootHeader.length !== 0) {
     this.showCount();
     var $rootHeaderContent = $('#header-cart-content');
     $rootHeaderContent.html('');
@@ -78,42 +70,60 @@ Basket.prototype.refresh = function ($rootMain, $rootHeader) {
     $('#headercart-total').text(this.total);
   }
 
-  if ($rootMain.length !== 0) {
-    $rootMain.html('');
+  if (this.$rootMain.length !== 0) {
+    this.$rootMain.html('');
     for (var i in this.basketItems) {
-      this.showMainItem(this.basketItems[i], $rootMain);
+      this.showMainItem(this.basketItems[i], this.$rootMain);
     }
 
     $('#shopcart-subtotal').text(this.subtotal);
     $('#shopcart-grandtotal').text(this.total);
   }
-  
-
-
-
-
-  // var $basketItemsDiv = $('#basket_items');
-  // $basketItemsDiv.empty();
-  // for (var i = 0; i < this.basketItems.length; i++) {
-  //   $basketItemsDiv.append('<div><span>' + (i + 1) + '. ' + this.basketItems[i]['id_product'] + ' - ' +
-  //                           this.basketItems[i]['price'] + '</span><span id="bskitemdel-' + i + '"> X </span></div>')
-  // }
-
-  // var $basketDataDiv = $('#basket_data'); // тут была ошибка, вместо basket_data был basket_wrapper
-  // $basketDataDiv.empty();
-  // $basketDataDiv.append('<p>Всего товаров: ' + this.countGoods + '</p>');
-  // $basketDataDiv.append('<p>Сумма: ' + this.amount + '</p>');
-
 };
+
+
+Basket.prototype.add = function (id) {
+  console.log('add started!', id);
+
+  //
+  // SEND to server by $.post - {"id": id}
+  // if result === true - then make below code (collectBasketItems and refresh)
+  // if result === false - then err handler
+  // ВСЕ ОПЕРАЦИИ ПО ДОБАВЛЕНИЮ ТОВАРА В КОРЗИНУ - НА СТОРОНЕ СЕРВЕРА!!!
+  //
+
+  this.collectBasketItems();
+  this.refresh();
+  console.log(this.basketItems);
+};
+
+Basket.prototype.delete = function (id) {
+    console.log('delete started!', id);
+
+  //
+  // SEND to server by $.post - {"id": id}
+  // if result === true - then make below code (collectBasketItems and refresh)
+  // if result === false - then err handler
+  // ВСЕ ОПЕРАЦИИ ПО УДАЛЕНИЮ ТОВАРА ИЗ КОРЗИНЫ - НА СТОРОНЕ СЕРВЕРА!!!
+  //
+
+  this.collectBasketItems();
+  this.refresh();
+  console.log(this.basketItems);
+};
+
 
 Basket.prototype.showCount = function() {
   $('#cart_qty').text(this.quantity);
 }
 
+
 Basket.prototype.showMainItem = function(item, $parent) {
   var $mainDiv = $('<div />', {
       class: 'shopcart-main__item'
   });
+
+  $mainDiv.attr('data-id', item.id);
   
   var $innerDiv = $('<div />', {
       class: 'shopcart-main__main_det'
@@ -213,6 +223,8 @@ Basket.prototype.showHeaderItem = function(item, $parent) {
       class: 'header_cart__content_item'
   });
 
+  $mainDiv.attr('data-id', item.id);
+
   var $itemImg = $('<img>', {
       src: item.pic,
       alt: item.pic.split('/').pop(),
@@ -275,170 +287,6 @@ Basket.prototype.showHeaderItem = function(item, $parent) {
 }
 
 
-
-
-
-
-Basket.prototype.add = function (product, quantity, price) {
-    // console.log(product, quantity, price);
-    var basketItems = {
-      "id_product": product,
-      "price": price
-    };
-
-    for (var i = 1; i <= quantity; i++) {
-        this.basketItems.push(basketItems);
-        this.countGoods++;
-        this.amount += +price;
-    }
-
-    this.refresh();
-    console.log(this.basketItems);
-};
-
-Basket.prototype.delete = function (item) {
-    itemToDelete = this.basketItems[item];
-
-    this.countGoods--;
-    this.amount -= itemToDelete['price'];
-
-    this.basketItems.splice(item, 1);
-    this.refresh();
-
-};
-
-
-
-
-
-
-
-
-
-
-
-function addFeaturedToBasket(event) {
-  if (event.target.classList.contains('featured-items__item_picshadow') ||
-      event.target.classList.contains('featured-items__item_imgshadow')) {
-    var elementData = '';
-    if (event.target.classList.contains('featured-items__item_imgshadow')) {
-      elementData = event.target.parentElement.getAttribute('data-id');
-    } else {
-      elementData = event.target.getAttribute('data-id');
-    }
-    var basket = JSON.parse(localStorage.getItem('brandshop')) || {};
-    if (isNaN(basket[elementData])) basket[elementData] = 0;
-    basket[elementData]++;
-    localStorage.setItem('brandshop', JSON.stringify(basket));
-    showBasketCount(basket);
-    showHeaderCart(basket);
-    showHeadercartTotal(basket);
-  }
-}
-
-function addProductToBasket(event) {
-  if (event.target.classList.contains('product-items__item_picshadow') ||
-      event.target.classList.contains('product-items__item_imgshadow')) {
-    var elementData = '';
-    if (event.target.classList.contains('product-items__item_imgshadow')) {
-      elementData = event.target.parentElement.getAttribute('data-id');
-    } else {
-      elementData = event.target.getAttribute('data-id');
-    }
-    var basket = JSON.parse(localStorage.getItem('brandshop')) || {};
-    if (isNaN(basket[elementData])) basket[elementData] = 0;
-    basket[elementData]++;
-    localStorage.setItem('brandshop', JSON.stringify(basket));
-    showBasketCount(basket);
-    showHeaderCart(basket);
-    showHeadercartTotal(basket);
-  }
-}
-
-function addMayLikeToBasket(event) {
-  console.log(event.target.classList);
-  if (event.target.classList.contains('maylike-items__item') ||
-      event.target.classList.contains('maylike-items__item_pic') ||
-      event.target.classList.contains('maylike-items__item_pic-img')) {
-    var elementData = '';
-    if (event.target.classList.contains('maylike-items__item')) {
-      elementData = event.target.getAttribute('data-id');;
-    } else if (event.target.classList.contains('maylike-items__item_pic')) {
-      elementData = event.target.parentElement.getAttribute('data-id');
-    } else {
-      elementData = event.target.parentElement.parentElement.getAttribute('data-id');
-    }
-    console.log(elementData);
-    var basket = JSON.parse(localStorage.getItem('brandshop')) || {};
-    if (isNaN(basket[elementData])) basket[elementData] = 0;
-    basket[elementData]++;
-    localStorage.setItem('brandshop', JSON.stringify(basket));
-    showBasketCount(basket);
-    showHeaderCart(basket);
-    showHeadercartTotal(basket);
-  }
-}
-
-
-
-
-
-
-
-function handleShopcartArea(event) {
-  if (event.target.id === 'shopcart-clear-button') {
-    localStorage.removeItem('brandshop');
-    var basket = JSON.parse(localStorage.getItem('brandshop'));
-    showBasketCount(basket);
-    showShopcartTotal(basket);
-    var cart = document.getElementById('shopcart-content');
-    cart.innerHTML = '';
-    var headercart = document.getElementById('header-cart-content');
-    headercart.innerHTML = '';
-  }
-  if (event.target.classList.contains('fa-times-circle')) {
-    var basket = JSON.parse(localStorage.getItem('brandshop'));
-    var parent = event.target.parentElement;
-    var itemToRemove = parent.parentElement;
-    var cartItem = itemToRemove.firstElementChild.firstElementChild.src.split('/').reverse()[0].replace('cart', '');
-    delete basket[cartItem];
-    localStorage.setItem('brandshop', JSON.stringify(basket));
-    showBasketCount(basket);
-    showShopcart(basket);
-    showShopcartTotal(basket);
-    showHeaderCart(basket);
-    showHeadercartTotal(basket);
-  }
-}
-
-function handleHeadcartArea() {
-  if (event.target.id === 'headcart-checkout') {
-    console.log('checkout');
-    window.location.href = 'checkout.html';
-  }
-  if (event.target.id === 'headcart-gotocart') {
-    console.log('gotocart');
-    window.location.href = 'shoppingcart.html';
-  }
-  if (event.target.classList.contains('fa-times-circle')) {
-    var basket = JSON.parse(localStorage.getItem('brandshop'));
-    var parent = event.target.parentElement;
-    var itemToRemove = parent.parentElement;
-    var cartItem = itemToRemove.firstElementChild.src.split('/').reverse()[0].replace('cart', '');
-    delete basket[cartItem];
-    localStorage.setItem('brandshop', JSON.stringify(basket));
-    showBasketCount(basket);
-    showHeaderCart(basket);
-    showHeadercartTotal(basket);
-    // parent = document.getElementById('shopcart-content');
-    // parent.removeChild(itemToRemove);
-    var shopcartArea = document.getElementsByClassName('shopcart-main');
-    if (typeof shopcartArea[0] != undefined) {
-      showShopcart(basket);
-      showShopcartTotal(basket);
-    }
-  }
-}
 
 function basketPicEnterHandler() {
   var headerCart = document.getElementById('header-cart');

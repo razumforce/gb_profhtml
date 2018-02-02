@@ -166,6 +166,9 @@
   margin-right: 32px;
   margin-bottom: 39px;
   position: relative;
+  background-image: url('../img/bacgrounditem.png');
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
 .featured-items__item:hover {
@@ -182,22 +185,44 @@
   height: 280px;
 }
 
-.featured-items__item_picshadow {
+.featured-items__item > img:hover {
+  opacity: 0.5;
+}
+
+.featured-items__item_add {
   position: absolute;
-  width: 261px;
-  height: 364px;
-  top: 0;
+  width: 123px;
+  height: 39px;
+  top: 98px;
+  left: 70px;
   opacity: 0;
+  background-image: url('../img/basketaddwhite.png');
+  background-position: 8px 7px;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 39px;
+  color: $inverse-color;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.featured-items__item_picshadow img {
-  width: 261px;
-  height: 280px;
+.featured-items__item_add > span {
+  position: relative;
+  left: 12px;
 }
 
-.featured-items__item_picshadow:hover {
+.featured-items__item_add:hover {
   opacity: 1;
+  background-color: $background-additem;
+  @include border-solid-1($inverse-color);
 }
+
+//.featured-items__item_picshadow img {
+//  width: 261px;
+//  height: 280px;
+//}
+
+
 
 .featured-items__item_desc {
   margin-top: 14px;

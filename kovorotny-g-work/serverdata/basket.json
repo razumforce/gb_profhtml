@@ -6,7 +6,7 @@
   "quantity": 3,
   "basket": [
     {
-      "id_product": 10,
+      "id": 10,
       "name": "BLAZE LEGGINGS",
       "color": "Red",
       "size": "XXL",
@@ -19,7 +19,7 @@
     },
 
     {
-      "id_product": 105,
+      "id": 105,
       "name": "MANGO PEOPLE T-SHIRT",
       "color": "Black",
       "size": "S",
