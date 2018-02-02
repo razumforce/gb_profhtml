@@ -69,15 +69,28 @@ Basket.prototype.render = function ($rootMain, $rootHeader) { // Генерац�
 Basket.prototype.refresh = function ($rootMain, $rootHeader) {
   if ($rootHeader.length !== 0) {
     this.showCount();
+    var $rootHeaderContent = $('#header-cart-content');
+    $rootHeaderContent.html('');
+    for (var i in this.basketItems) {
+      this.showHeaderItem(this.basketItems[i], $rootHeaderContent);
+    }
+
+    $('#headercart-total').text(this.total);
   }
 
-  $rootMain.html('');
-  for (var i in this.basketItems) {
-    this.showMainItem(this.basketItems[i], $rootMain);
-  }
+  if ($rootMain.length !== 0) {
+    $rootMain.html('');
+    for (var i in this.basketItems) {
+      this.showMainItem(this.basketItems[i], $rootMain);
+    }
 
-  $('#shopcart-subtotal').text(this.subtotal);
-  $('#shopcart-grandtotal').text(this.total);
+    $('#shopcart-subtotal').text(this.subtotal);
+    $('#shopcart-grandtotal').text(this.total);
+  }
+  
+
+
+
 
   // var $basketItemsDiv = $('#basket_items');
   // $basketItemsDiv.empty();
@@ -127,9 +140,8 @@ Basket.prototype.showMainItem = function(item, $parent) {
 
   $wrapperDiv = $('<div />');
   $('<span />', {
-    text: 'Color'
+    text: 'Color: '
   }).appendTo($wrapperDiv);
-  $wrapperDiv = $('<div />');
   $('<span />', {
     text: item.color
   }).appendTo($wrapperDiv);
@@ -137,15 +149,16 @@ Basket.prototype.showMainItem = function(item, $parent) {
 
   $wrapperDiv = $('<div />');
   $('<span />', {
-    text: 'Size'
+    text: 'Size: '
   }).appendTo($wrapperDiv);
-  $wrapperDiv = $('<div />');
   $('<span />', {
     text: item.size
   }).appendTo($wrapperDiv);
   $wrapperDiv.appendTo($itemDesc);
 
   $itemDesc.appendTo($innerDiv);
+
+  $innerDiv.appendTo($mainDiv);
 
   var $itemPrice = $('<div />', {
       class: 'shopcart-main__main_price'
@@ -154,7 +167,7 @@ Basket.prototype.showMainItem = function(item, $parent) {
     text: item.price
   }).appendTo($itemPrice);
 
-  $itemPrice.appendTo($innerDiv);
+  $itemPrice.appendTo($mainDiv);
 
   var $itemQty = $('<div />', {
       class: 'shopcart-main__main_qty'
@@ -163,7 +176,7 @@ Basket.prototype.showMainItem = function(item, $parent) {
     text: item.quantity
   }).appendTo($itemQty);
 
-  $itemQty.appendTo($innerDiv);
+  $itemQty.appendTo($mainDiv);
 
   var $itemShip = $('<div />', {
       class: 'shopcart-main__main_ship'
@@ -172,7 +185,7 @@ Basket.prototype.showMainItem = function(item, $parent) {
     text: item.shipping
   }).appendTo($itemShip);
 
-  $itemShip.appendTo($innerDiv);
+  $itemShip.appendTo($mainDiv);
 
   var $itemAmount = $('<div />', {
       class: 'shopcart-main__main_subtotal'
@@ -181,7 +194,7 @@ Basket.prototype.showMainItem = function(item, $parent) {
     text: item.amount
   }).appendTo($itemAmount);
 
-  $itemAmount.appendTo($innerDiv);
+  $itemAmount.appendTo($mainDiv);
 
   var $itemDelete = $('<div />', {
       class: 'shopcart-main__main_action'
@@ -190,95 +203,78 @@ Basket.prototype.showMainItem = function(item, $parent) {
     class: 'fa fa-times-circle'
   }).appendTo($itemDelete);
 
-  $itemDelete.appendTo($innerDiv);
+  $itemDelete.appendTo($mainDiv);
 
-
-  $innerDiv.appendTo($mainDiv);
   $mainDiv.appendTo($parent);
-
 }
 
-function showShopcartItem(image, qty, parent) {
-  // var item = document.createElement('div');
-  // item.classList.add('shopcart-main__item');
-  // parent = parent.appendChild(item);
+Basket.prototype.showHeaderItem = function(item, $parent) {
+  var $mainDiv = $('<div />', {
+      class: 'header_cart__content_item'
+  });
 
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_det');
-  // var parent_inner = parent.appendChild(item);
+  var $itemImg = $('<img>', {
+      src: item.pic,
+      alt: item.pic.split('/').pop(),
+      height: '85px',
+      width: '72px'
+  });
 
-  // item = document.createElement('img');
-  // item.src = 'img/shoppingcart/cart' + image;
-  // item.alt = 'cart' + image;
-  // item.style.height = '115px';
-  // item.style.width = '100px';
-  // parent_inner.appendChild(item);
+  $itemImg.appendTo($mainDiv);
 
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_desc');
-  // var parent_inner = parent_inner.appendChild(item);
+  var $itemDesc = $('<div />', {
+      class: 'header_cart__content-det'
+  });
 
-  // item = document.createElement('div');
-  // var parent_inner2 = parent_inner.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = 'MANGO PEOPLE T-SHIRT';
-  // parent_inner2.appendChild(item);
+  $('<span />', {
+    text: item.name
+  }).appendTo($itemDesc);
 
-  // item = document.createElement('div');
-  // parent_inner2 = parent_inner.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = 'Color:';
-  // parent_inner2.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText ='Red';
-  // parent_inner2.appendChild(item);
+  var $wrapperSpan = $('<span />');
+  for (var i = 0; i < parseInt(item.rating); i++ ) {
+    $('<i />', {
+      class: 'fa fa-star'
+    }).appendTo($wrapperSpan);
+  }
+  if (item.rating - parseInt(item.rating) == 0.5) {
+    $('<i />', {
+      class: 'fa fa-star-half-o'
+    }).appendTo($wrapperSpan);
+  }
+  for (var i = 0; i < parseInt(5 - item.rating); i++ ) {
+    $('<i />', {
+      class: 'fa fa-star-o'
+    }).appendTo($wrapperSpan);
+  }
+  $wrapperSpan.appendTo($itemDesc);
 
-  // item = document.createElement('div');
-  // parent_inner2 = parent_inner.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = 'Size';
-  // parent_inner2.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = 'XLL';
-  // parent_inner2.appendChild(item);
+  var $wrapperDiv = $('<div />');
+  $('<span />', {
+    text: item.quantity
+  }).appendTo($wrapperDiv);
+  $('<span />', {
+    html: '&nbsp;x&nbsp;'
+  }).appendTo($wrapperDiv);
+  $('<span />', {
+    text: item.price
+  }).appendTo($wrapperDiv);
+  $wrapperDiv.appendTo($itemDesc);
 
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_price');
-  // var parent_inner = parent.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = '$' + 150;
-  // parent_inner.appendChild(item);
+  $itemDesc.appendTo($mainDiv);
+  
+  var $itemDelete = $('<div />', {
+      class: 'header_cart__content_action'
+  });
+  $('<i />', {
+    class: 'fa fa-times-circle'
+  }).appendTo($itemDelete);
 
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_qty');
-  // var parent_inner = parent.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = qty;
-  // parent_inner.appendChild(item);
+  $itemDelete.appendTo($mainDiv);
 
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_ship');
-  // var parent_inner = parent.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = 'FREE';
-  // parent_inner.appendChild(item);
-
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_subtotal');
-  // var parent_inner = parent.appendChild(item);
-  // item = document.createElement('span');
-  // item.innerText = '$' + 150 * qty;
-  // parent_inner.appendChild(item);
-
-  // item = document.createElement('div');
-  // item.classList.add('shopcart-main__main_action');
-  // var parent_inner = parent.appendChild(item);
-  // item = document.createElement('i');
-  // item.classList.add('fa');
-  // item.classList.add('fa-times-circle');
-  // item.setAttribute('aria-hidden', 'true');
-  // parent_inner.appendChild(item);
+  $mainDiv.appendTo($parent);
 }
+
+
 
 
 
@@ -387,86 +383,7 @@ function addMayLikeToBasket(event) {
 
 
 
-function showHeaderCart(basket) {
-  var parent = document.getElementById('header-cart-content');
-  parent.innerHTML = '';
-  for (var i in basket) {
-    showHeadercartItem(i, basket[i], parent);
-  }
-  showHeadercartTotal(basket);
-}
 
-function showHeadercartTotal(basket) {
-  var total = 0;
-  for (var i in basket) {
-    total += basket[i] * 150; // временное решение, в basket буду хранить также цену товара, и автоматом считать
-  }
-  document.getElementById('headercart-total').innerText = '$' + total;
-}
-
-function showHeadercartItem(image, qty, parent) {
-  var item = document.createElement('div');
-  item.classList.add('header_cart__content_item');
-  parent = parent.appendChild(item);
-
-  item = document.createElement('img');
-  item.src = 'img/shoppingcart/cart' + image;
-  item.alt = 'cart' + image;
-  item.style.height = '85px';
-  item.style.width = '72px';
-  parent.appendChild(item);
-
-  item = document.createElement('div');
-  item.classList.add('header_cart__content-det');
-  var parent_inner = parent.appendChild(item);
-
-  item = document.createElement('span');
-  item.innerText = 'RENOX ZANE';
-  parent_inner.appendChild(item);
-
-  item = document.createElement('span');
-  var parent_inner2 = parent_inner.appendChild(item);
-
-  for (var i = 0; i < 3; i++) {
-    item = document.createElement('i');
-    item.classList.add('fa');
-    item.classList.add('fa-star');
-    item.setAttribute('aria-hidden', 'true');
-    parent_inner2.appendChild(item);
-  }
-  item = document.createElement('i');
-  item.classList.add('fa');
-  item.classList.add('fa-star-half-o');
-  item.setAttribute('aria-hidden', 'true');
-  parent_inner2.appendChild(item);
-  item = document.createElement('i');
-  item.classList.add('fa');
-  item.classList.add('fa-star-o');
-  item.setAttribute('aria-hidden', 'true');
-  parent_inner2.appendChild(item);
-
-  item = document.createElement('div');
-  parent_inner2 = parent_inner.appendChild(item);
-
-  item = document.createElement('span');
-  item.innerText = qty;
-  parent_inner2.appendChild(item);
-  item = document.createElement('span');
-  item.innerHTML = '&nbsp;x&nbsp';
-  parent_inner2.appendChild(item);
-  item = document.createElement('span');
-  item.innerText = '$' + 150;
-  parent_inner2.appendChild(item);
-
-  item = document.createElement('div');
-  item.classList.add('header_cart__content_action');
-  parent_inner = parent.appendChild(item);
-  item = document.createElement('i');
-  item.classList.add('fa');
-  item.classList.add('fa-times-circle');
-  item.setAttribute('aria-hidden', 'true');
-  parent_inner.appendChild(item);
-}
 
 function handleShopcartArea(event) {
   if (event.target.id === 'shopcart-clear-button') {

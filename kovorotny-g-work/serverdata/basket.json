@@ -14,7 +14,8 @@
       "quantity": 2,
       "shipping": "FREE",
       "amount": "$104.00",
-      "pic": "./img/single/maylike1.png"
+      "pic": "./img/single/maylike1.png",
+      "rating": 3.5
     },
 
     {
@@ -25,8 +26,9 @@
       "price": "$52.00",
       "quantity": 1,
       "shipping": "FREE",
-      "amount": "$104.00",
-      "pic": "./img/product/image1.png"
+      "amount": "$52.00",
+      "pic": "./img/product/image1.png",
+      "rating": 2
     }
   ]
 }
