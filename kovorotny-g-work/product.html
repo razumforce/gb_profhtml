@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="packages/jui/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" defer></script>
   <script src="js/brand_product.js" defer></script>
   <script src="js/brand_global_basket.js" defer></script>
   <script src="js/brandshop.js" defer></script>
@@ -60,10 +61,10 @@
               <span>TOTAL</span><span id="headercart-total">$0</span>
             </div>
             <div class="header_cart__checkout">
-              <button id="headcart-checkout">CHECKOUT</button>
+              <a id="headcart-checkout" href="./checkout.html">CHECKOUT</a>
             </div>
             <div class="header_cart__gotocart">
-              <button id="headcart-gotocart">GO TO CART</button>
+              <a id="headcart-gotocart" href="./shoppingcart.html">GO TO CART</a>
             </div>
           </div>
         </div>
@@ -155,16 +156,16 @@
               <div class="product-choice__options_trending">
                 <div>TRENDING NOW</div>
                 <div class="product-choice__options_items">
-                  <span>Bohemian</span>
+                  <span class="product-choice_trending">Bohemian</span>
                   <span>|</span>
-                  <span>Floral</span>
+                  <span class="product-choice_trending">Floral</span>
                   <span>|</span>
-                  <span>Lace</span>
-                  <span>Floral</span>
+                  <span class="product-choice_trending">Lace</span>
+                  <span class="product-choice_trending">Floral</span>
                   <span>|</span>
-                  <span>Lace</span>
+                  <span class="product-choice_trending">Lace</span>
                   <span>|</span>
-                  <span>Bohemian</span>
+                  <span class="product-choice_trending">Bohemian</span>
                 </div>
               </div>
               <div class="product-choice__options_size">

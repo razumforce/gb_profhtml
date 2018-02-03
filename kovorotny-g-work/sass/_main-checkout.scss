@@ -17,6 +17,10 @@
   font-weight: 700;
 }
 
+.checkout-steps__title:hover {
+  cursor: pointer;
+}
+
 .checkout-steps input[type="radio"] {
   margin-top: 15px;
 }
@@ -70,14 +74,14 @@
 }
 
 .checkout-steps__div {
-  display: none;
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 
-div.checkout-steps__active {
-  display: flex;
-}
+//div.checkout-steps__active {
+//  display: flex;
+//}
 
 .checkout-steps__div form {
   width: 515px;

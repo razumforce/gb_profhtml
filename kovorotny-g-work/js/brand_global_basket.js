@@ -50,10 +50,6 @@ Basket.prototype.render = function () { // Генерация базовой р�
 
     if (this.$rootHeader.length !== 0) {
       console.log('HEADER cart present!');
-      $('.header__basket-pic').first().on('mouseenter', basketPicEnterHandler);
-      $('.header__basket-pic').first().on('mouseleave', basketPicLeaveHandler);
-      this.$rootHeader.on('mouseenter', basketPicEnterHandler);
-      this.$rootHeader.on('mouseleave', basketPicLeaveHandler);
     }
 };
 
@@ -287,14 +283,4 @@ Basket.prototype.showHeaderItem = function(item, $parent) {
 }
 
 
-
-function basketPicEnterHandler() {
-  var headerCart = document.getElementById('header-cart');
-  headerCart.style.display = 'block';
-}
-
-function basketPicLeaveHandler() {
-  var headerCart = document.getElementById('header-cart');
-  headerCart.style.display = 'none';
-}
 

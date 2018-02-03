@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" defer></script>
   <script src="js/brand_single.js" defer></script>
   <script src="js/brand_global_basket.js" defer></script>
   <script src="js/brandshop.js" defer></script>
@@ -58,10 +59,10 @@
               <span>TOTAL</span><span id="headercart-total">$0</span>
             </div>
             <div class="header_cart__checkout">
-              <button id="headcart-checkout">CHECKOUT</button>
+              <a id="headcart-checkout" href="./checkout.html">CHECKOUT</a>
             </div>
             <div class="header_cart__gotocart">
-              <button id="headcart-gotocart">GO TO CART</button>
+              <a id="headcart-gotocart" href="./shoppingcart.html">GO TO CART</a>
             </div>
           </div>
         </div>
@@ -106,13 +107,20 @@
         <div id="single-slider-div" class="carousel slide" data-ride="carousel" data-interval="5000">
           <!-- Indicators -->
           <ol class="carousel-indicators slider-ind single-slider-ind">
+<!--
+           
             <li data-target="#single-slider-div" data-slide-to="0" class="active"></li>
             <li data-target="#single-slider-div" data-slide-to="1"></li>
             <li data-target="#single-slider-div" data-slide-to="2"></li>
+            
+-->
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
+           
+<!--
+           
             <div class="item active">
               <img src="./img/single/product-big-photo.png" alt="single-0">
             </div>
@@ -124,6 +132,8 @@
             <div class="item">
               <img src="./img/single/product-big-photo.png" alt="product-0">
             </div>                        
+            
+-->
             
           </div>
         </div>       
@@ -139,29 +149,29 @@
       
       <div class="container-w">
         <section class="single-item">
-          <h2>WOMEN COLLECTION</h2>
+          <h2></h2>
           <div class="single-item__title-line">
           </div>
           
           <div class="single-item__item-details">
-            <span>MOSCHINO CHEAP AND CHIC</span>
-            <p>Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cuttin-edge services. Completely visualize parallel core competences rather than exceptional portals.</p>
+            <span></span>
+            <p></p>
             <div class="single-item__item-details_info">
               <div class="single-item__item-details_info-det">
                 <span>MATERIAL:</span>
-                <span>COTTON</span>
+                <span></span>
               </div>
               <div class="single-item__item-details_info-det">
                 <span>DESIGNER:</span>
-                <span>BINBURHAN</span>
+                <span></span>
               </div>
             </div>
             <div class="single-item__item-details_price">
-              <span>$561</span>
+              <span></span>
             </div>
           </div>
           
-          <form class="single-item__item-choice" action="#">
+          <form class="single-item__item-choice" action="#" data-id="">
             <div class="single-item__item-choice_field">
               <div class="single-item__item-choice_type">
                 <div class="single-item__item-choice_type-title">
@@ -169,7 +179,7 @@
                 </div>
                 <div class="single-item__item-choice_type-box">
                   <a href="#">
-                    <span><i class="fa fa-square" style="color: #f16d7f;"></i>&nbsp;&nbsp;&nbsp;Red</span>
+                    <span id="single-item__item-choice_color"></span>
                     <span><i class="fa fa-caret-down"></i></span>
                   </a>
                 </div>
@@ -180,7 +190,7 @@
                 </div>
                 <div class="single-item__item-choice_type-box">
                   <a href="#">
-                    <span>XXL</span>
+                    <span id="single-item__item-choice_size"></span>
                     <span><i class="fa fa-caret-down"></i></span>
                   </a>
                 </div>
@@ -191,7 +201,7 @@
                 </div>
                 <div class="single-item__item-choice_type-box">
                   <a href="#">
-                    <span>2</span>
+                    <span id="single-item__item-choice_qty"></span>
                   </a>
                 </div>
               </div>

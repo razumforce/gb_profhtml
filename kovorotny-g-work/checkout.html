@@ -11,6 +11,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="packages/jui/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" defer></script>
+  <script src="js/brand_checkout.js" defer></script>
   <script src="js/brand_global_basket.js" defer></script>
   <script src="js/brandshop.js" defer></script>
 </head>
@@ -83,10 +85,10 @@
               <span>TOTAL</span><span id="headercart-total">$0</span>
             </div>
             <div class="header_cart__checkout">
-              <button id="headcart-checkout">CHECKOUT</button>
+              <a id="headcart-checkout" href="./checkout.html">CHECKOUT</a>
             </div>
             <div class="header_cart__gotocart">
-              <button id="headcart-gotocart">GO TO CART</button>
+              <a id="headcart-gotocart" href="./shoppingcart.html">GO TO CART</a>
             </div>
           </div>
         </div>
@@ -134,12 +136,12 @@
             <div class="checkout-steps__title">
               <span>01. SHIPPING ADDRESS</span>
             </div>
-            <div class="checkout-steps__div">
+            <div class="checkout-steps__div checkout-steps__active">
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest1" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg1" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
@@ -170,8 +172,8 @@
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest2" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg2" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
@@ -202,8 +204,8 @@
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest3" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg3" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
@@ -234,8 +236,8 @@
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest4" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg4" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
@@ -266,8 +268,8 @@
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest5" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg5" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>
@@ -294,12 +296,12 @@
             <div class="checkout-steps__title">
               <span>06. ORDER REVIEW</span>
             </div>
-            <div class="checkout-steps__div checkout-steps__active">
+            <div class="checkout-steps__div">
               <form class="checkout-steps__div_form-gr" action="">
                 <h3>CHECK AS A GUEST OR REGISTER</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p>
-                <input type="radio" id="user-guest" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
-                <input type="radio" id="user-reg" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
+                <input type="radio" id="user-guest6" name="user_type" value="gst"><span>CHECKOUT AS GUEST</span><br>
+                <input type="radio" id="user-reg6" name="user_type" value="reg" checked><span>REGISTER</span><br><br>
                 <h3>REGISTER AND SAVE TIME!</h3>
                 <p class="checkout-steps__p-light">Register with us for future convenience</p><br>
                 <p class="checkout-steps__p-light1"><i class="fa fa-angle-double-right"></i>Fast and easy checkout</p>

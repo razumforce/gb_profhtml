@@ -1,0 +1,30 @@
+{
+  "result": true,
+  "message": "OK",
+  "item": {
+      "id": 10,
+      "collection": "WOMEN COLLECTION",
+      "name": "NEW ITEM 10",
+      "material": "SILK",
+      "designer": "BINBURHAN",
+      "description": "Compellingly actual ourcing. Progressively syndicate collaborative  before cuttin-edge services. Completely visualize parallel core competences rather than exceptional portals.",
+      "color_code": [
+        "#000000",
+        "#000088"
+      ],
+      "color": [
+        "Black",
+        "Blue"
+      ],
+      "size": [
+        "XL",
+        "M",
+        "S"
+      ],
+      "price": "$125.77",
+      "pic": [
+        "./img/single/product-big-photo.png",
+        "./img/single/product-big-photo.png"
+      ]
+    }
+}

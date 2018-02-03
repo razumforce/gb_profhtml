@@ -57,5 +57,27 @@ function productPaginationUpdate(activePage, qty) {
   } else {
     $('#product-pagination').append('<span class="product-choice__control-active">&gt;</span>');
   }
+}
 
+function productLeftNavInit() {
+  $('.product__left-nav').first().children('.product__left-nav__head').each(function(index) {
+    if ($(this).hasClass('product__left-nav__active')) {
+      $(this).children('.product__left-nav__items').show(0);
+    } else {
+      $(this).children('.product__left-nav__items').hide(0);
+    }
+  });
+}
+
+function toggleProductCategory(event) {
+  // console.log($(event.currentTarget).next().attr('class').split(' '));
+  if ($(event.currentTarget).parent().hasClass('product__left-nav__active')) {
+
+  } else {
+    $(event.currentTarget).parent().parent().find('.product__left-nav__active').first()
+      .children('.product__left-nav__items').first().hide(500);
+    $(event.currentTarget).parent().parent().find('.product__left-nav__active').first().removeClass('product__left-nav__active');
+    $(event.currentTarget).parent().addClass('product__left-nav__active');
+    $(event.currentTarget).parent().children('.product__left-nav__items').first().show(500);
+  }
 }

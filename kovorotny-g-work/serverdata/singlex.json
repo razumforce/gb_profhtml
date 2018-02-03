@@ -1,0 +1,30 @@
+{
+  "result": true,
+  "message": "OK",
+  "item": {
+      "id": 45,
+      "collection": "WOMEN COLLECTION",
+      "name": "MOSCHINO CHEAP AND CHIC",
+      "material": "COTTON",
+      "designer": "BINBURHAN",
+      "description": "Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cuttin-edge services. Completely visualize parallel core competences rather than exceptional portals.",
+      "color_code": [
+        "#f16d7f",
+        "#000000"
+      ],
+      "color": [
+        "Red",
+        "Black"
+      ],
+      "size": [
+        "XXL",
+        "M",
+        "XS"
+      ],
+      "price": "$561.00",
+      "pic": [
+        "./img/single/product-big-photo.png",
+        "./img/single/product-big-photo.png"
+      ]
+    }
+}

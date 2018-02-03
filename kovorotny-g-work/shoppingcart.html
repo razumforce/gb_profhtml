@@ -11,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="packages/jui/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" defer></script>
   <script src="js/brand_global_basket.js" defer></script>
   <script src="js/brandshop.js" defer></script>
 </head>
@@ -58,10 +59,10 @@
               <span>TOTAL</span><span id="headercart-total">$0</span>
             </div>
             <div class="header_cart__checkout">
-              <button id="headcart-checkout">CHECKOUT</button>
+              <a id="headcart-checkout" href="./checkout.html">CHECKOUT</a>
             </div>
             <div class="header_cart__gotocart">
-              <button id="headcart-gotocart">GO TO CART</button>
+              <a id="headcart-gotocart" href="./shoppingcart.html">GO TO CART</a>
             </div>
           </div>
         </div>
@@ -198,7 +199,7 @@
                 </div>
               </div>
               <div class="shopcart-main__buttons_checkout">
-                <a href="#">PROCEED TO CHECKOUT</a>
+                <a href="./checkout.html">PROCEED TO CHECKOUT</a>
               </div>
             </div>
           </div>

@@ -257,8 +257,13 @@
   font-weight: 700;
   color: $main-color;
 }
-.header_cart__checkout > button,
-.header_cart__gotocart > button {
+
+.header_cart__checkout > a,
+.header_cart__gotocart > a {
+  display: block;
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
   width: 225px;
   height: 50px;
   outline: none;
@@ -270,12 +275,12 @@
   font-weight: 700;
 }
 
-.header_cart__checkout > button {
+.header_cart__checkout > a {
   @include border-solid-1($add-color);
   color: $add-color;
 }
 
-.header_cart__gotocart > button {
+.header_cart__gotocart > a {
   @include border-solid-1($border-slider);
   color: $gotocart-text;
 }

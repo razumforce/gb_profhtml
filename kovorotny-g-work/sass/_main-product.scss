@@ -33,16 +33,16 @@
 }
 
 .product__left-nav__head > div {
-  display: none;
+  display: block;
 }
 
 .product__left-nav__active > span {
   color: $single-price;
 }
 
-.product__left-nav__active > div {
-  display: block;
-}
+//.product__left-nav__active > div {
+//  display: block;
+//}
 
 .product-choice {
   width: 848px;
@@ -89,6 +89,11 @@
 .product-choice__options_trending > div:last-child > span {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.product-choice_trending:hover {
+  cursor: pointer;
+  color: $add-color;
 }
 
 .product-choice__options_size {
