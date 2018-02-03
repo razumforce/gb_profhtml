@@ -26,14 +26,6 @@ p, span {
   position: relative;
   scroll-behavior: auto; }
 
-.container-w-slider {
-  margin: 0 auto;
-  /*width: 80%;*/
-  max-width: 1141px;
-  position: relative;
-  scroll-behavior: auto;
-  top: 0; }
-
 .clearfix {
   clear: both; }
 
@@ -389,13 +381,10 @@ p, span {
   /*min-height: 3406px;*/ }
 
 .main-slider {
-  height: 539px;
-  position: relative; }
-
-.index-slider {
-  position: absolute;
-  top: 0;
-  left: 0; }
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
 
 .slider-ind > li {
   background-color: #ffffff; }
