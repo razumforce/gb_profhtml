@@ -1,0 +1,118 @@
+{ "menu": {
+    "id": "main_menu",
+    "data": [
+      {
+        "href": "./index.html",
+        "title": "HOME"
+      },
+      {
+        "href": "#",
+        "title": "MEN",
+        "submenu": {
+          "id": "sub_men",
+          "data": [
+            {
+              "href": "./product.html",
+              "title": "Sweaters"
+            },
+            {
+              "href": "./product.html",
+              "title": "Coats"
+            },
+            {
+              "href": "./product.html",
+              "title": "Jampers"
+            },
+            {
+              "href": "./product.html",
+              "title": "Shirts"
+            }
+          ]
+        }
+      },
+      {
+        "href": "#",
+        "title": "WOMEN",
+        "submenu": {
+          "id": "sub_women",
+          "data": [
+            {
+              "href": "./product.html",
+              "title": "Sweaters"
+            },
+            {
+              "href": "./product.html",
+              "title": "Coats"
+            },
+            {
+              "href": "./product.html",
+              "title": "Jampers"
+            },
+            {
+              "href": "./product.html",
+              "title": "Shirts"
+            }
+          ]
+        }
+      },
+      {
+        "href": "#",
+        "title": "KIDS",
+        "submenu": {
+          "id": "sub_kids",
+          "data": [
+            {
+              "href": "./product.html",
+              "title": "Sweaters"
+            },
+            {
+              "href": "./product.html",
+              "title": "Coats"
+            },
+            {
+              "href": "./product.html",
+              "title": "Jampers"
+            },
+            {
+              "href": "./product.html",
+              "title": "Shirts"
+            }
+          ]
+        }
+      },
+      {
+        "href": "#",
+        "title": "ACCOSERIESE",
+        "submenu": {
+          "id": "sub_accoss",
+          "data": [
+            {
+              "href": "./product.html",
+              "title": "Sweaters"
+            },
+            {
+              "href": "./product.html",
+              "title": "Coats"
+            },
+            {
+              "href": "./product.html",
+              "title": "Jampers"
+            },
+            {
+              "href": "./product.html",
+              "title": "Shirts"
+            }
+          ]
+        }
+      },
+      {
+        "href": "./product.html",
+        "title": "FEATURED"
+      },
+      {
+        "href": "./product.html",
+        "title": "HOT DEALS"
+      }
+    ]
+  }
+}

@@ -34,7 +34,6 @@ Basket.prototype.collectBasketItems = function () {
           for (var index in data.basket) {
               this.basketItems.push(data.basket[index]);
           }
-          console.log(this.basketItems);
           this.render(this.$rootMain, this.$rootHeader);
           this.refresh(this.$rootMain, this.$rootHeader);
       },
