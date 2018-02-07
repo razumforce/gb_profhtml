@@ -243,78 +243,8 @@ span.product-choice__control-active {
   padding-left: 1px;
 }
 
-.product-items__item {
-  float: left;
-  width: 261px;
-  height: 364px;
-  margin-right: 32px;
-  margin-bottom: 39px;
-  position: relative;
-  background-image: url('../img/bacgrounditem.png');
-  background-position: top;
-  background-repeat: no-repeat;
-}
-
-.product-items__item:hover {
-  box-shadow: 0px 5px 8px 0px $border-shadow;
-  cursor: pointer;
-}
-
-.product-items__item:nth-child(3n) {
+.product-items__3col:nth-child(3n) {
   margin-right: 0;
-}
-
-.product-items__item > img {
-  width: 261px;
-  height: 280px;
-}
-
-.product-items__item > img:hover {
-  opacity: 0.5;
-}
-
-.product-items__item_add {
-  position: absolute;
-  width: 123px;
-  height: 39px;
-  top: 98px;
-  left: 70px;
-  opacity: 0;
-  background-image: url('../img/basketaddwhite.png');
-  background-position: 8px 7px;
-  background-repeat: no-repeat;
-  text-align: center;
-  line-height: 39px;
-  color: $inverse-color;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.product-items__item_add > span {
-  position: relative;
-  left: 12px;
-}
-
-.product-items__item_add:hover {
-  opacity: 1;
-  background-color: $background-additem;
-  @include border-solid-1($inverse-color);
-}
-
-.product-items__item_desc {
-  margin-top: 14px;
-  margin-left: 16px;
-  color:  $main-color;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.product-items__item_price {
-  margin-top: 12px;
-  margin-left: 16px;
-  color:  $add-color;
-  font-size: 15px;
-  font-weight: 700;
 }
 
 .special-product {

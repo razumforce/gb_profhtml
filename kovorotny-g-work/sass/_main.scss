@@ -161,7 +161,7 @@
   padding-left: 1px;
 }
 
-.featured-items__item {
+.product-items__item {
   float: left;
   width: 261px;
   height: 364px;
@@ -173,34 +173,31 @@
   background-repeat: no-repeat;
 }
 
-.featured-items__item:hover {
+.product-items__item:hover {
   box-shadow: 0px 5px 8px 0px $border-shadow;
   cursor: pointer;
 }
 
-.featured-items__item:nth-child(4n) {
+.product-items__4col:nth-child(4n) {
   margin-right: 0;
 }
 
-.featured-items__item > img {
+.product-items__item > img {
   width: 261px;
   height: 280px;
 }
 
-.featured-items__item > img:hover {
+.product-items__item > img:hover {
   opacity: 0.5;
 }
 
-.featured-items__item_add {
+.product-items__item_add {
   position: absolute;
-  width: 123px;
-  height: 39px;
-  top: 98px;
-  left: 70px;
+  width: 100%;
+  height: 280px;
+  top: 0;
+  left: 0;
   opacity: 0;
-  background-image: url('../img/basketaddwhite.png');
-  background-position: 8px 7px;
-  background-repeat: no-repeat;
   text-align: center;
   line-height: 39px;
   color: $inverse-color;
@@ -208,25 +205,25 @@
   font-weight: 700;
 }
 
-.featured-items__item_add > span {
+.product-items__item_add > span {
   position: relative;
-  left: 12px;
+  top: 100px;
+  @include border-solid-1($inverse-color);
+  background-image: url('../img/basketaddwhite.png');
+  background-position: 7px 8px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.featured-items__item_add:hover {
+.product-items__item_add:hover {
   opacity: 1;
   background-color: $background-additem;
-  @include border-solid-1($inverse-color);
 }
 
-//.featured-items__item_picshadow img {
-//  width: 261px;
-//  height: 280px;
-//}
-
-
-
-.featured-items__item_desc {
+.product-items__item_desc {
   margin-top: 14px;
   margin-left: 16px;
   color:  $main-color;
@@ -234,7 +231,7 @@
   font-weight: 400;
 }
 
-.featured-items__item_price {
+.product-items__item_price {
   margin-top: 12px;
   margin-left: 16px;
   color:  $add-color;
