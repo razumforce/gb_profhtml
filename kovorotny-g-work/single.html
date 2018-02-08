@@ -7,9 +7,11 @@
   <title>Home - Single - Bootstrap</title>
   <link rel="stylesheet" type="text/css" href="packages/font-awesome-4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="packages/jui/jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="packages/jui/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" defer></script>
   <script src="js/brand_single.js" defer></script>
   <script src="js/brand_global_menu.js" defer></script>
@@ -35,7 +37,22 @@
         
         <div class="header__search-bar">
           <div class="header__search-bar_browse">
-            <a href="#">Browse <i class="fa fa-caret-down"></i></a>
+            <div id="header-search-browse" class="styled-drop_box">
+              <div>
+                <span>Browse</span>
+                <span><i class="fa fa-caret-down"></i></span>
+              </div>
+              <ul>
+                <li>Men</li>
+                <li>Women</li>
+                <li>Kids</li>
+                <li>Accessories</li>
+              </ul>
+            </div>
+           
+           
+           
+<!--            <a href="#">Browse <i class="fa fa-caret-down"></i></a>-->
           </div>
           <form class="header__search-bar_form" action="#">
               <input class="header__search-bar_item" type="text" name="search-item"  placeholder="Search for &nbsp;Item..." required pattern="^[a-zA-Z]+$">
@@ -165,6 +182,24 @@
           
           <form class="single-item__item-choice" action="#" data-id="">
             <div class="single-item__item-choice_field">
+             
+              <div class="single-item__item-choice_type">
+                <div for="item-color" class="single-item__item-choice_type-title">CHOOSE COLOR</div>
+                <div id="single-item-color" class="styled-drop_box">
+                  <div>
+                    <span><i class="fa fa-square" style="color: #000088"></i>&nbsp;&nbsp;&nbsp;Blue</span>
+                    <span><i class="fa fa-caret-down"></i></span>
+                  </div>
+                  <ul>
+                    <li><i class="fa fa-square" style="color: #000088"></i>&nbsp;&nbsp;&nbsp;Blue</li>
+                    <li><i class="fa fa-square" style="color: #000000"></i>&nbsp;&nbsp;&nbsp;Red</li>
+                    <li><i class="fa fa-square" style="color: #f16d7f"></i>&nbsp;&nbsp;&nbsp;Black</li>
+                  </ul>
+                </div>  
+              </div>
+             
+<!--
+             
               <div class="single-item__item-choice_type">
                 <div class="single-item__item-choice_type-title">
                   <span>CHOOSE COLOR</span>
@@ -176,7 +211,24 @@
                   </a>
                 </div>
               </div>
+              
+-->
               <div class="single-item__item-choice_type">
+                <div for="item-size" class="single-item__item-choice_type-title">CHOOSE SIZE</div>
+                <div id="single-item-size" class="styled-drop_box">
+                  <div>
+                    <span>XXL</span>
+                    <span><i class="fa fa-caret-down"></i></span>
+                  </div>
+                  <ul>
+                    <li>S</li>
+                    <li>M</li>
+                    <li>XXL</li>
+                  </ul>
+                </div>  
+              </div>
+               
+<!--
                 <div class="single-item__item-choice_type-title">
                   <span>CHOOSE SIZE</span>
                 </div>
@@ -186,17 +238,21 @@
                     <span><i class="fa fa-caret-down"></i></span>
                   </a>
                 </div>
-              </div>
+-->
+                
+                
+              
               <div class="single-item__item-choice_type">
-                <div class="single-item__item-choice_type-title">
-                  <span>QUANTITY</span>
-                </div>
-                <div class="single-item__item-choice_type-box">
-                  <a href="#">
-                    <span id="single-item__item-choice_qty"></span>
-                  </a>
-                </div>
+                <div for="item-size" class="single-item__item-choice_type-title">QUANTITY</div>
+                <div id="single-item-qty" class="styled-input_box">
+                  <div>
+                    <input type="text" value="1" name="quantity">
+                  </div>
+                </div>  
               </div>
+              
+              
+              
             </div>
             <button class="single-item__item-add" type="button">Add to Cart</button>
           </form>

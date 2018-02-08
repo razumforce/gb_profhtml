@@ -70,18 +70,27 @@
   @include border-solid-rad-left(3px, $border-search, 1px);  
 }
 
-.header__search-bar_browse a {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  text-decoration: none;
+.header__search-bar_browse > div.styled-drop_box {
+  border-style: none;
+}
+
+.header__search-bar_browse > div.styled-drop_box > ul {
   color: $main-color;
-  font-weight: 300;
+}
+
+.header__search-bar_browse > div.styled-drop_box > div {
+  color: $main-color;
+  font-weight: 400;
   line-height: 38px;
 }
 
-.header__search-bar_browse a:hover {
+.header__search-bar_browse > div.styled-drop_box > div:hover {
   background-color: $add-color;
+}
+
+.header__search-bar_browse > div.styled-drop_box > ul > li:hover {
+  background-color: $add-color;
+  cursor: pointer;
 }
 
 .header__search-bar_form {

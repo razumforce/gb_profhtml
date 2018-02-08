@@ -19,11 +19,10 @@ function singleItemLoad() {
             $item.find('.single-item__item-details_info-det').first().children('span:nth-child(2)').text(data.item.material);
             $item.find('.single-item__item-details_info-det:nth-child(2)').children('span:nth-child(2)').text(data.item.designer);
             $item.find('.single-item__item-details_price').first().children('span').text(data.item.price);
-            $item.find('#single-item__item-choice_color').html('<i class="fa fa-square" style="color: ' + 
+            $item.find('#single-item-color>div>span:first-child').html('<i class="fa fa-square" style="color: ' + 
                                                                 data.item.color_code[0] + ';"></i>&nbsp;&nbsp;&nbsp;' +
                                                                 data.item.color[0]);
-            $item.find('#single-item__item-choice_size').text(data.item.size[0]);
-            $item.find('#single-item__item-choice_qty').text('1');
+            $item.find('#single-item-size>div>span:first-child').text(data.item.size[0]);
             
             var $slider = $('#single-slider-div');
             var $sliderCarousel = $slider.children('ol').first();
@@ -78,14 +77,18 @@ function singleMaylikeLoad() {
 }
 
 function addItemToBasket(event) {
-  event.stopPropagation();
-  console.log(event.data);
+  // event.stopPropagation();
+  console.log($(event.currentTarget));
+
   console.log($(event.currentTarget).parent().attr('data-id') == '');
   var id = $(event.currentTarget).parent().attr('data-id')
 
   if (typeof id === 'undefined' || id === '') {
     console.log('no data-id!!!');
   } else {
-    event.data.add(id);
+    var color = $('#single-item-color>div>span:first-child').html().match(/#.{6}/)[0];
+    var size = $('#single-item-size>div>span:first-child').text();
+    var qty = $('#single-item-qty>div>input').val();
+    event.data.add(id, color, size, qty);
   }
 }

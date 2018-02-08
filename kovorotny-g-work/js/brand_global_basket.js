@@ -77,8 +77,8 @@ Basket.prototype.refresh = function () {
 };
 
 
-Basket.prototype.add = function (id) {
-  console.log('add started!', id);
+Basket.prototype.add = function (id, color, size, qty) {
+  console.log('add started!', id, color, size, qty);
 
   //
   // SEND to server by $.post - {"id": id}

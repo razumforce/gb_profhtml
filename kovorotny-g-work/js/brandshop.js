@@ -11,6 +11,12 @@ $(document).ready(function() {
 
   var basket = new Basket($('#shopcart-content'), $('#header-cart'));
 
+  $('body').on('click', bodyClick);
+  $('body').on('click', '.styled-drop_box', toggleStyledDropBox);
+  $('.styled-drop_box').on('click', 'li', selectStyledDropBox);
+
+  // $('.styled-drop_box').on('click', 'i.fa', toggleStyledDropBox);
+
 // код для страницы index.html
 
   if ($('.featured-items').length !== 0) {
@@ -98,3 +104,36 @@ function basketPicLeaveHandler() {
   headerCart.style.display = 'none';
 }
 
+// styled-drop-box - functionality
+
+function bodyClick(event) {
+  if ($(event.target).hasClass('styled-drop_box') || $(event.target).parent().hasClass('styled-drop_box') ||
+      $(event.target).parent().parent().hasClass('styled-drop_box') ||
+      $(event.target).parent().parent().parent().hasClass('styled-drop_box')) {
+
+  } else {
+    closeAllDropBox();
+  }
+}
+
+function toggleStyledDropBox(event) {
+  var $currentDrop = $(event.currentTarget).children('ul').first();
+
+  if ($currentDrop.css('display') == 'none') {
+    closeAllDropBox();
+    $currentDrop.css('display', 'block');
+  } else {
+    $currentDrop.css('display', 'none');
+  }
+}
+
+function selectStyledDropBox(event) {
+  $(event.currentTarget).parent().parent().children('div').first().children('span').first()
+    .html($(event.currentTarget).html()); 
+}
+
+function closeAllDropBox() {
+  $('.styled-drop_box').each(function(i, elem) {
+    $(this).children('ul').first().css('display', 'none');
+  });
+}
