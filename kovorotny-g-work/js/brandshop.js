@@ -7,6 +7,7 @@ $(document).ready(function() {
 
   if($('#header-search-browse').length !== 0) {
     browseLoadOptions();
+    $('#btn-header-browse').on('click', searchBrowseItem);
   }
 
 // код для HEADER MENU на всех страницах
@@ -186,4 +187,11 @@ function loadBrowseInput(category) {
           }  
       }
   });
+}
+
+function searchBrowseItem(event) {
+  console.log($('#header-browse-input').val());
+  $('#info-dialog').attr('title', 'Search');
+  $('#info-dialog').html('Searching for: ' + $('#header-browse-input').val());
+  $('#info-dialog').dialog();
 }

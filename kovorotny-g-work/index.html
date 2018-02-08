@@ -19,6 +19,7 @@
   <script src="js/brandshop.js" defer></script>
 </head>
 <body>
+  <div id="info-dialog" title="" style="display: none;"></div>
   <div class="wrapper">
 
     <header class="header">
@@ -50,10 +51,10 @@
               </ul>
             </div>
           </div>
-          <form class="header__search-bar_form" action="">
+          <div class="header__search-bar_form">
               <input id="header-browse-input" class="header__search-bar_item" type="text" name="search-item"  placeholder="Search for &nbsp;Item..." required pattern="^[a-zA-Z]+$">
-              <button class="header__search-bar_button" type="submit" value=""><i class="fa fa-search"></i></button>
-          </form>
+              <button id="btn-header-browse" class="header__search-bar_button" type="submit" value=""><i class="fa fa-search"></i></button>
+          </div>
         </div>
         
         <div class="header__acc-controls">
@@ -152,37 +153,46 @@
         <section class="main-catalog">
         
          <div class="main-catalog-column">
-            <div class="main-catalog__men">
-              <img src="img/banner-men.png" alt="men">
-              <div class="main-catalog__item-label">
-                <span class="main-catalog__item-label_top">HOT DEAL</span><br>
-                <span class="main-catalog__item-label_bottom">FOR MEN</span>
+            <a href="./product.html">   
+              <div class="main-catalog__men">
+                <img src="img/banner-men.png" alt="men">
+                <div class="main-catalog__item-label">
+                  <span class="main-catalog__item-label_top">HOT DEAL</span><br>
+                  <span class="main-catalog__item-label_bottom">FOR MEN</span>
+                </div>
               </div>
-            </div>
-            <div class="main-catalog__acces">
-              <img src="img/banner-acc.png" alt="accessories">
-              <div class="main-catalog__item-label">
-                <span class="main-catalog__item-label_top">LUXIROUS &amp; TRENDY</span><br>
-                <span class="main-catalog__item-label_bottom">ACCESSORIES</span>
+            </a>
+            <a href="./product.html">
+              <div class="main-catalog__acces">
+                <img src="img/banner-acc.png" alt="accessories">
+                <div class="main-catalog__item-label">
+                  <span class="main-catalog__item-label_top">LUXIROUS &amp; TRENDY</span><br>
+                  <span class="main-catalog__item-label_bottom">ACCESSORIES</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
+           
           
           <div class="main-catalog-column">
-            <div class="main-catalog__women">
-              <img src="img/banner-women.png" alt="women">
-              <div class="main-catalog__item-label">
-                <span class="main-catalog__item-label_top">30% OFFER</span><br>
-                <span class="main-catalog__item-label_bottom">WOMEN</span>
+            <a href="./product.html">
+              <div class="main-catalog__women">
+                <img src="img/banner-women.png" alt="women">
+                <div class="main-catalog__item-label">
+                  <span class="main-catalog__item-label_top">30% OFFER</span><br>
+                  <span class="main-catalog__item-label_bottom">WOMEN</span>
+                </div>
               </div>
-            </div>
-            <div class="main-catalog__kids">
-              <img src="img/banner-kids.png" alt="kids">
-              <div class="main-catalog__item-label">
-                <span class="main-catalog__item-label_top">NEW ARRIVALS</span><br>
-                <span class="main-catalog__item-label_bottom">FOR KIDS</span>
+            </a>
+            <a href="./product.html">
+              <div class="main-catalog__kids">
+                <img src="img/banner-kids.png" alt="kids">
+                <div class="main-catalog__item-label">
+                  <span class="main-catalog__item-label_top">NEW ARRIVALS</span><br>
+                  <span class="main-catalog__item-label_bottom">FOR KIDS</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </section>
 
@@ -337,12 +347,14 @@
 
         <div class="footer-menu__main">
           <div class="footer-menu__main_logo">
-            <div class="footer-menu__main_logo-pic">
-              <img src="img/brand-logo.png" alt="Logo">
-            </div>
-            <div class="footer-menu__main_logo-text">
-              <span>BRAN<span class="special-text_color">D</span></span>
-            </div>
+            <a href="./index.html">
+              <div class="footer-menu__main_logo-pic">
+                <img src="img/brand-logo.png" alt="Logo">
+              </div>
+              <div class="footer-menu__main_logo-text">
+                <span>BRAN<span class="special-text_color">D</span></span>
+              </div>
+            </a>
           </div>
           <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Instrinsicly syndicate an expanded array of processes and cross-unit partnerships.<br><br>Efficiently plagiarize 24/365 action items and focused infomediaries. Distinctively seize superior initiatives for wireless technoliges. Dynamically optimize.</p>
         </div>

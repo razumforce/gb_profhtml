@@ -79,6 +79,9 @@ Basket.prototype.refresh = function () {
 
 Basket.prototype.add = function (id, color, size, qty) {
   console.log('add started!', id, color, size, qty);
+  $('#info-dialog').attr('title', 'Add item to basket');
+  $('#info-dialog').html('ID ' + id + ', COLOR CODE: ' + color + ', SIZE: ' + size + ', Q-TY: ' + qty);
+  $('#info-dialog').dialog();
 
   //
   // SEND to server by $.post - {"id": id}
@@ -94,6 +97,9 @@ Basket.prototype.add = function (id, color, size, qty) {
 
 Basket.prototype.delete = function (id) {
     console.log('delete started!', id);
+    $('#info-dialog').attr('title', 'Delete item from basket!');
+    $('#info-dialog').html('ID ' + id);
+    $('#info-dialog').dialog();
 
   //
   // SEND to server by $.post - {"id": id}
