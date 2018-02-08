@@ -37,10 +37,21 @@
         
         <div class="header__search-bar">
           <div class="header__search-bar_browse">
-            <a href="#">Browse <i class="fa fa-caret-down"></i></a>
+            <div id="header-search-browse" class="styled-drop_box">
+              <div>
+                <span>Browse</span>
+                <span><i class="fa fa-caret-down"></i></span>
+              </div>
+              <ul>
+                <li>Men</li>
+                <li>Women</li>
+                <li>Kids</li>
+                <li>Accessories</li>
+              </ul>
+            </div>
           </div>
           <form class="header__search-bar_form" action="#">
-              <input class="header__search-bar_item" type="text" name="search-item"  placeholder="Search for &nbsp;Item..." required pattern="^[a-zA-Z]+$">
+              <input id="header-browse-input" class="header__search-bar_item" type="text" name="search-item"  placeholder="Search for &nbsp;Item..." required pattern="^[a-zA-Z]+$">
               <button class="header__search-bar_button" type="submit" value=""><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -205,16 +216,35 @@
               </div>
             </div>
             <div class="product-choice__sort">
-              <div class="product-choice__sort_item">
-                <span>Sort By</span>
-                <span>Name</span>
-                <span><i class="fa fa-caret-down"></i></span>
+             
+              <div class="product-choice__sort_item">               
+                <span>Sort&nbsp;By</span>
+                <div id="product-sort-name" class="styled-drop_box">
+                  <div>
+                    <span>Name</span>
+                    <span><i class="fa fa-caret-down"></i></span>
+                  </div>
+                  <ul>
+                    <li>Name</li>
+                    <li>Price</li>
+                  </ul>
+                </div>
               </div>
+              
               <div class="product-choice__sort_item">
                 <span>Show</span>
-                <span>09</span>
-                <span><i class="fa fa-caret-down"></i></span>
+                <div id="product-sort-number" class="styled-drop_box">
+                  <div>
+                    <span>09</span>
+                    <span><i class="fa fa-caret-down"></i></span>
+                  </div>
+                  <ul>
+                    <li>06</li>
+                    <li>09</li>
+                  </ul>
+                </div>
               </div>
+              
             </div>
             <div class="product-items">
               <div class="product-items__item product-items__3col" data-id="">

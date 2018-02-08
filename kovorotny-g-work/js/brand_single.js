@@ -22,7 +22,9 @@ function singleItemLoad() {
             $item.find('#single-item-color>div>span:first-child').html('<i class="fa fa-square" style="color: ' + 
                                                                 data.item.color_code[0] + ';"></i>&nbsp;&nbsp;&nbsp;' +
                                                                 data.item.color[0]);
+            singleLoadColorOptions($item.find('#single-item-color>ul'), data.item.color_code, data.item.color);
             $item.find('#single-item-size>div>span:first-child').text(data.item.size[0]);
+            styledLoadOptions($item.find('#single-item-size>ul'), data.item.size);
             
             var $slider = $('#single-slider-div');
             var $sliderCarousel = $slider.children('ol').first();
@@ -92,3 +94,17 @@ function addItemToBasket(event) {
     event.data.add(id, color, size, qty);
   }
 }
+
+function singleLoadColorOptions($elem, colorCode, colorName) {
+  $elem.html('');
+  for (var i in colorCode) {
+    var optionHTML = '<i class="fa fa-square" style="color: ' + colorCode[i] +
+                 ';"></i>&nbsp;&nbsp;&nbsp;' + colorName[i];
+    var $option = $('<li />', {
+      html: optionHTML
+    });
+    $option.appendTo($elem);
+  }
+}
+
+

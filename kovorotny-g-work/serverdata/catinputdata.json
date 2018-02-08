@@ -1,0 +1,10 @@
+{
+  "result": true,
+  "message": "OK",
+  "options": [
+        "Jackets",
+        "Sweaters",
+        "Shirts",
+        "Jampers"
+      ]
+}

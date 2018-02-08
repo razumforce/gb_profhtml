@@ -1,0 +1,10 @@
+{
+  "result": true,
+  "message": "OK",
+  "options": [
+        "Men",
+        "Women",
+        "Kids",
+        "Accessories"
+      ]
+}

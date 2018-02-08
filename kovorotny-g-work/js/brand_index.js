@@ -1,7 +1,6 @@
 "use strict";
 
 function indexFeaturedLoad() {
-
   $.get({
       url: './serverdata/indexfeatured.json',
       dataType: 'json',

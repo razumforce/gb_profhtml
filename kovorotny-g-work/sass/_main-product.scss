@@ -163,6 +163,8 @@
   background-color: $background-sort;
   margin-bottom: 45px;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -186,6 +188,31 @@
 
 .product-choice__sort_item > span:first-child {
   border-right: solid $border-left-nav 1px;
+}
+
+.product-choice__sort_item > div.styled-drop_box {
+  border-style: none;
+}
+
+.product-choice__sort_item > div.styled-drop_box > ul {
+  color: $product-left-nav;
+  background-color: white;
+  top: 30px;
+}
+
+.product-choice__sort_item > div.styled-drop_box > div {
+  color: $product-left-nav;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+//.product-choice__sort_item > div.styled-drop_box > div:hover {
+//  background-color: $add-color;
+//}
+
+.product-choice__sort_item > div.styled-drop_box > ul > li:hover {
+  background-color: $add-color;
+  cursor: pointer;
 }
 
 .product-choice__controls {

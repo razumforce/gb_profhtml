@@ -3,6 +3,12 @@
 
 $(document).ready(function() {
 
+// код для BROWSE SEARCH на всех страницах
+
+  if($('#header-search-browse').length !== 0) {
+    browseLoadOptions();
+  }
+
 // код для HEADER MENU на всех страницах
 
   var menuHeader = new Menu();
@@ -129,11 +135,55 @@ function toggleStyledDropBox(event) {
 
 function selectStyledDropBox(event) {
   $(event.currentTarget).parent().parent().children('div').first().children('span').first()
-    .html($(event.currentTarget).html()); 
+    .html($(event.currentTarget).html());
+  if ($(event.currentTarget).parent().parent().attr('id') == 'header-search-browse') {
+    loadBrowseInput($(event.currentTarget).html());
+  }
 }
 
 function closeAllDropBox() {
   $('.styled-drop_box').each(function(i, elem) {
     $(this).children('ul').first().css('display', 'none');
+  });
+}
+
+function browseLoadOptions() {
+  $.get({
+      url: './serverdata/browseoptions.json',
+      dataType: 'json',
+      success: function (data) {
+          if (data.result) {
+            styledLoadOptions($('#header-search-browse>ul'), data.options);
+          } else {
+            console.log('SOMETHING WENT WRONG, ERROR MESSAGE: ' + data.message);
+          }
+          
+      }
+  });
+}
+
+function styledLoadOptions($elem, data) {
+  $elem.html('');
+  for (var i in data) {
+    var $option = $('<li />', {
+      html: data[i]
+    });
+    $option.appendTo($elem);
+  }
+}
+
+function loadBrowseInput(category) {
+  $.get({
+      url: './serverdata/catinputdata.json',
+      dataType: 'json',
+      success: function (data) {
+          if (data.result) {
+            $('#header-browse-input').autocomplete({
+              source: data.options
+            });
+          } else {
+            console.log('SOMETHING WENT WRONG, ERROR MESSAGE: ' + data.message);
+          }  
+      }
   });
 }

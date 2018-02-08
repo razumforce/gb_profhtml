@@ -200,8 +200,6 @@ p, span {
   left: 1px;
   min-width: 80%;
   color:  $single-type-box;
-  @include background-gradient;
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.08);
   z-index: 3;
   opacity: 1;
 }
@@ -220,7 +218,7 @@ p, span {
   padding: 7px;
 }
 
-.styled-drop_box > div > span > i:hover {
+.styled-drop_box:hover {
   cursor: pointer;
 }
 

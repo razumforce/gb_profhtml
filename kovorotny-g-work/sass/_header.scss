@@ -56,14 +56,17 @@
   margin-top: 31px;
   margin-left: 36px;
   position: relative;
-  width: 414px;
+//  width: 414px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .header__search-bar_browse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 87px;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+  min-width: 87px;
   height: 38px;
   text-align: center;
   background-color: $background-search-browse;
@@ -76,6 +79,8 @@
 
 .header__search-bar_browse > div.styled-drop_box > ul {
   color: $main-color;
+  @include background-gradient;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.08);
 }
 
 .header__search-bar_browse > div.styled-drop_box > div {
@@ -94,8 +99,8 @@
 }
 
 .header__search-bar_form {
-  position: absolute;
-  left: 88px;
+//  position: absolute;
+//  left: 88px;
   display: flex;
   margin-left: -2px;
 }
