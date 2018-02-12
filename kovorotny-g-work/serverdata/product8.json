@@ -1,0 +1,69 @@
+{
+  "result": true,
+  "message": "OK",
+  "total": 100,
+  "items": [
+    {
+      "id": 105,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image1.png"
+    },
+
+    {
+      "id": 106,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image2.png"
+    },
+
+    {
+      "id": 107,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image3.png"
+    },
+
+    {
+      "id": 108,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image4.png"
+    },
+
+    {
+      "id": 109,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image5.png"
+    },
+
+    {
+      "id": 110,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image6.png"
+    },
+
+    {
+      "id": 111,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image7.png"
+    },
+
+    {
+      "id": 112,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image8.png"
+    },
+
+    {
+      "id": 113,
+      "name": "MANGO PEOPLE T-SHIRT",
+      "price": "$52.00",
+      "pic": "./img/product/image9.png"
+    }
+  ]
+}
