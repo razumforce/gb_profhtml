@@ -36,7 +36,7 @@ $(document).ready(function() {
   if ($('#product-price-slider').length !== 0) {
     productPriceSliderInit();
     productLeftNavInit();
-    productItemsLoad($('#product-pagination').attr('data-page'));
+    var productPagination = new ProductByPage($('#product-pagination'), $('.product-items__item'));
     $('.product-choice').first().on('click', '.product-items__item_add>span', basket, gotoSingleItem);
     $('.product__left-nav').first().on('click', 'span', toggleProductCategory);
   }
